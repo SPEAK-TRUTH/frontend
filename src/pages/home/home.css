@@ -1,0 +1,18 @@
+.home{
+    width:100%;
+}
+
+.homeSectionWrapper{
+    width:80%;
+    height:auto;
+    margin:80px auto;
+
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+}
+
+img{
+    width:500px;
+    height:auto;
+}
