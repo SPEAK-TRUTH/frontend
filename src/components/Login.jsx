@@ -6,23 +6,19 @@ const Login = () => {
     <div className="w-screen h-screen bg-slate-100 m-0 p-0">
       <div className="flex w-screen h-screen justify-center items-center px-6 md:px-12 lg:px-36 mx-auto">
         {/* left */}
-        <div className="hidden md:block md:w-2/5">
-          <div className="h-full">
-            <img
-              src={IMAGE}
-              alt="logo"
-              className="object-cover w-full h-full"
-            />
-          </div>
+        <div className="hidden relative md:block bg-[#27A2DB] md:w-2/5 md:h-4/5 h-auto">
+          <img
+            src={IMAGE}
+            alt="logo"
+            className="object-cover absolute w-11/12 top-1/2 left-4"
+          />
         </div>
         {/* right */}
         <div className="w-full md:w-3/5 md:h-4/5 h-auto py-6 bg-[#D9D9D9] flex justify-center items-center container">
           <div className="bg-white flex justify-center py-6 items-center shadow-xl shadow-gray-500 h-4/5 lg:w-3/5 w-4/5 container">
             <div className="flex flex-col justify-center h-full w-4/5 gap-5 max-w-[300px] container">
-              <p className="text-center text-sm md:text-base">
-                Welcome to SPEAKTRUTH
-              </p>
-              <h3 className="text-3xl font-bold text-center">Login</h3>
+              <p className="text-sm md:text-base">Welcome to SPEAKTRUTH</p>
+              <h3 className="text-3xl font-bold">Login</h3>
               {/* Form */}
               <div className="flex flex-col justify-start gap-3">
                 <div className="flex flex-col justify-start gap-2">
