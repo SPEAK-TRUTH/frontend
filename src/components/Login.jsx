@@ -1,5 +1,6 @@
 import React from "react";
 import LOGO from "../assets/images/speaktruth-low-resolution-logo-white-on-transparent-background.png";
+import FormItem from "./FormItem";
 import BG_IMG from "../assets/images/listen-gfd3aad7e6_1920.jpeg";
 
 const Login = () => {
@@ -28,14 +29,8 @@ const Login = () => {
               <h3 className="text-3xl font-bold">Login</h3>
               {/* Form */}
               <div className="flex flex-col justify-start gap-3">
-                <div className="flex flex-col justify-start gap-2">
-                  <label className="text-left">Username</label>
-                  <input type="text" className="border p-2 mb-2 md:m-0" />
-                </div>
-                <div className="flex flex-col justify-center gap-2">
-                  <label htmlFor="">Password</label>
-                  <input type="password" className="border p-2 mb-2 md:m-0" />
-                </div>
+                <FormItem item={'Username'} />
+                <FormItem item={'Password'} />
                 <button className="cursor-pointer bg-[#27A2DB] w-full  text-white my-3 md:mb-0 p-2 rounded hover:bg-blue-700">
                   Login
                 </button>
