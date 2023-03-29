@@ -1,14 +1,16 @@
 import React from "react";
-import IMAGE from "../assets/topHeaderImages/speaktruthLogo.png";
+import LOGO from "../assets/images/speaktruth-low-resolution-logo-white-on-transparent-background.png";
+import BG_IMG from "../assets/images/listen-gfd3aad7e6_1920.jpeg";
 
 const SignUp = () => {
   return (
-    <div className="w-screen h-screen bg-slate-100 m-0 p-0">
-      <div className="flex w-screen h-screen justify-center items-center px-6 md:px-12 lg:px-36 mx-auto">
+    <div className="w-screen h-screen bg-slate-100 m-0 p-0 relative">
+        <img src={BG_IMG} alt="" className="object-cover w-screen h-screen " />
+      <div className="flex w-screen h-screen justify-center items-center px-6 md:px-12 lg:px-36 mx-auto top-0 left-0 absolute">
         {/* left */}
         <div className="hidden relative md:block bg-[#27A2DB] md:w-2/5 md:h-4/5 h-auto">
           <img
-            src={IMAGE}
+            src={LOGO}
             alt="logo"
             className="object-cover absolute w-11/12 top-1/2 left-4"
           />
