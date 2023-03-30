@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import LOGO from "../../assets/images/speaktruth-high-resolution-logo-color-on-transparent-background.png";
 import "./confirmation.css";
+import { IconContext } from "react-icons";
+import { BsShieldFillExclamation } from "react-icons/bs";
 
 const Confirmation = () => {
   //   const showSettings = (event) => event.preventDefault();
@@ -64,6 +66,7 @@ const Confirmation = () => {
             </div>
             <div className="blue-container">
               {/* logo */}
+                <BsShieldFillExclamation className="icon" />
               <p className="text inner-text">
                 Download or copy and safely store this key. Without it, you
                 won't be able to check the report and communicate further with
@@ -76,11 +79,10 @@ const Confirmation = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Footer */}
-      <div className="footer">
-        <p className="footer-text">SPEAKTRUTH 2023. ALL RIGHTS RESERVED.</p>
+        {/* Footer */}
+        <div className="footer">
+          <p className="footer-text">SPEAKTRUTH 2023. ALL RIGHTS RESERVED.</p>
+        </div>
       </div>
     </>
   );
