@@ -59,14 +59,20 @@ const CheckReport = () => {
             <div className="top-wrapper">
               <p className="headline">Check a Report</p>
               <p className="text">
-              Check the report to see the status and to communicate anonymously with the person from your organization that is handling your report.
+                Check the report to see the status and to communicate
+                anonymously with the person from your organization that is
+                handling your report.
               </p>
             </div>
             <div className="report-form">
-                <p className="form-head">Report key*</p>
-                <input type="text" className="key" placeholder="letmereport1234"/>
-                <button className="btn check">Check</button>
-              </div>
+              <p className="form-head">Report key*</p>
+              <input
+                type="text"
+                className="key"
+                placeholder="letmereport1234"
+              />
+              <button className="btn check">Check</button>
+            </div>
           </div>
         </div>
         {/* Footer */}
