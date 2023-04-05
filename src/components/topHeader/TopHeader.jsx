@@ -22,7 +22,7 @@ const TopHeader = () => {
   }
   const smallScreen = 576;
   const mediumScreen = 768;
-  const largeScreen = 1200;
+  const largeScreen = 1024;
 
   const [windowSize, setWindowSize] = useState([
     window.innerWidth,
@@ -46,28 +46,41 @@ const TopHeader = () => {
       {/* {windowSize < largeScreen ? (<Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />) : <></>} */}
       {/* box1 */}
       <div className="topHeaderSpeakTruthLogoWrapper">
-        {windowSize <= mediumScreen ? <img className='topHeaderSpeakTruthLogo' src={SpeakTruthLogo} /> : <img className='topHeaderSpeakTruthFullLogo' src={SpeakTruthFullLogo} />}
+        {windowSize < largeScreen ? <img className='topHeaderSpeakTruthLogo' src={SpeakTruthLogo} /> : <img className='topHeaderSpeakTruthFullLogo' src={SpeakTruthFullLogo} />}
         
       </div>
       
       {/* box2 */}
       
         <div className='topHeaderlinks'  >
-          <Link to='/' className="topHeader_link">
+          {/* <Link to='#' className="topHeader_link">
             <span className='topHeaderAbout_link'>About</span>
           </Link>
 
-          <Link to='/' className="topHeader_link">
+          <Link to='#' className="topHeader_link">
             <span className='topHeaderFaq_link'>FAQ</span>
           </Link>
 
-          <Link to='/' className="topHeader_link">
+          <Link to='#' className="topHeader_link">
             <span className='topHeaderPrivacy_link'>Privacy </span>
           </Link>
 
-          <Link to='/' className="topHeader_link">
+          <Link to='#' className="topHeader_link">
             <span className='topHeaderReport_link'>Report</span>
-          </Link>
+          </Link> */}
+
+          <a href="#" className="topHeader_link">
+            <span className='topHeaderAbout_link'>About</span>
+          </a>
+          <a href="#" className="topHeader_link">
+          <span className='topHeaderFaq_link'>FAQ</span>
+          </a>
+          <a href="#" className="topHeader_link">
+          <span className='topHeaderPrivacy_link'>Privacy </span>
+          </a>
+          <a href="#" className="topHeader_link">
+          <span className='topHeaderReport_link'>Report</span>
+          </a>
         </div>
         {windowSize > largeScreen ? (<></>) : (
             <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />

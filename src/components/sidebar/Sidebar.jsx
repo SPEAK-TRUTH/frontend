@@ -14,7 +14,7 @@ import "./sidebar.css"
 const Sidebar = () => {
   return (
     <Menu right>
-      <Link to='/' className="menu-item">
+      {/* <Link to='/' className="menu-item">
         <span className='topHeaderAbout_link'>About</span>
       </Link>
 
@@ -28,7 +28,20 @@ const Sidebar = () => {
 
       <Link to='/' className="menu-item">
         <span className='topHeaderReport_link'>Report</span>
-      </Link>
+      </Link> */}
+
+          <a href="#" className="menu">
+            <span className='topHeaderAbout_link'>About</span>
+          </a>
+          <a href="#" className="menu">
+          <span className='topHeaderFaq_link'>FAQ</span>
+          </a>
+          <a href="#" className="menu">
+          <span className='topHeaderPrivacy_link'>Privacy </span>
+          </a>
+          <a href="#" className="menu">
+          <span className='topHeaderReport_link'>Report</span>
+          </a>
     </Menu>
   )
 }

@@ -1,18 +1,176 @@
 .home{
-    width:100%;
+    width:95%;
+    margin:0 auto;
 }
 
 .homeSectionWrapper{
-    width:80%;
+    width:100%;
     height:auto;
     margin:80px auto;
 
     display:flex;
     align-items:center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-img{
-    width:500px;
+.homeLeftSection, .homeRightSection{
+    width:50%;
     height:auto;
+}
+
+.homeHeaderLinkWrapper{
+    width:100%;
+    height:auto;
+
+    display:flex;
+    justify-content: center;
+}
+
+.homeHeader_link{
+    padding:10px 35px;
+    color:white;
+
+    border-radius: 5px;
+    background-color: #27A2DB;
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.homeIntroduction{
+    width:100%;
+    height:auto;
+    margin-bottom:80px;
+}
+
+
+
+.homeIntroduction span{
+    width:100%;
+    height:45px;
+    
+    line-height: 22px;
+    font-size: 13px;
+    font-family: 'Goldman';
+}
+
+.homeIntroduction h2{
+    width:80%;
+    height:auto;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 51px;
+
+}
+
+.homeIntroduction h3{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+
+    margin-top:25px;
+}
+
+
+
+
+
+
+
+.homeRightImageWrapper{
+    display:flex;
+    justify-content: center;
+}
+
+.homeRightImageWrapper img{
+    width:95%;
+    height:auto;
+    border-radius: 150px 70px;
+}
+
+.homeShortIntroduction{
+    width:100%;
+    height:auto;
+}
+
+.homeShortIntroduction h3{
+    width:60%;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 42px;
+    text-align: center;
+    margin:0 auto;
+}
+
+/* Media query for screens smaller than 1024px */
+@media (max-width: 1024px) {
+    .homeLeftSection, .homeRightSection{
+        width:95%;
+        height:auto;
+    }
+    .homeLeftSection{
+        margin-bottom:80px;
+    }
+    .homeSectionWrapper{
+        width:100%;
+        height:auto;
+        
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+    }
+
+.homeIntroduction span{
+    width:100%;
+    height:45px;
+    
+    line-height: 22px;
+    font-size: 13px;
+    font-family: 'Goldman';
+}
+
+.homeIntroduction h2{
+    width:100%;
+    height:auto;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 51px;
+
+}
+
+.homeIntroduction h3{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top:25px;
+}
+
+.homeShortIntroduction h3{
+    width:95%;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 42px;
+    text-align: center;
+    margin:0 auto;
+}
+
+
+
+
 }

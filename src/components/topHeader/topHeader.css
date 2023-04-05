@@ -1,5 +1,5 @@
 .topHeaderWrapper{
-    width:90%;
+    width:95%;
     height:auto;
 
     display:flex;
@@ -17,7 +17,7 @@
     width:350px;
     height:auto;
     transition: width 0.5s;
-    padding:20px;
+    padding:20px 0px;
 }
 
 .topHeaderSpeakTruthLogo{
@@ -73,7 +73,7 @@
 
 
 /* Media query for screens smaller than 1100px */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
     .topHeaderlinks{
         display:none;
     }

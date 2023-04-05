@@ -12,6 +12,7 @@ import Sidebar from "./components/sidebar/Sidebar.jsx";
 
 // css
 import "./App.css"
+import About from "./pages/about/About.jsx";
 
 
 
@@ -20,14 +21,11 @@ function App() {
 
   return (
     <div  className="app" id="outer-container">
-      <Router>
-        <Routes>
           
-          <Route exact path="/" element={<Home />} id="page-wrap" />
+      <Home />
+      <About/>
           
-        </Routes>
-        
-      </Router>
+          
     </div>
   )
 }
