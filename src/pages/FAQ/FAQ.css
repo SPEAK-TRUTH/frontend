@@ -1,0 +1,48 @@
+.faq{
+    width:95%;
+    margin:0px auto 50px auto;
+}
+
+.faqHeader{
+    width:100%;
+    height: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    margin-bottom:100px;
+}
+
+.faqHeader h1{
+    font-size: 50px;
+    font-family: Open Sans;
+    text-align: center;
+}
+
+.faqHeader span{
+    font-size: 50px;
+    font-family: Rufina;
+    color:#27A2DB;
+    font-weight: 500;
+}
+
+.faqSection{
+    width:80%;
+    margin:0 auto;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    
+    .faqSection{
+        width:100%;
+        margin:0 auto;
+    }
+    .faqHeader{
+        width:100%;
+        height: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 50px;
+        margin-bottom:50px;
+    }
+}

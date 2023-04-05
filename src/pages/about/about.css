@@ -2,7 +2,7 @@
     width:100%;
 
 
-    margin:100px auto 0px auto;
+    margin:100px auto 150px auto;
 }
 
 .aboutSpeaktruthSection{
@@ -115,6 +115,12 @@
 
 /* Media query for screens smaller than 768px */
 @media (max-width: 768px) {
+    .about{
+        width:100%;
+    
+    
+        margin:100px auto 100px auto;
+    }
     .aboutVoiceImageWrapper img{
         width:100%;
         filter: drop-shadow(0px 30px 30px rgba(39, 162, 219, 0.25));

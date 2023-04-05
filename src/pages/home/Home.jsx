@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 // components
 import TopHeader from "../../components/topHeader/TopHeader.jsx"
-import About from "../../pages/about/About.jsx"
 
 // css
 import "./home.css"
