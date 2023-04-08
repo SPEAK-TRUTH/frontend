@@ -59,16 +59,14 @@
 
 .aboutVoice{
     width:100%;
-
     display: flex;
     flex-direction: row;
     align-items:center;
     justify-content: space-around;
-
 }
 
 .aboutVoice:last-of-type{
-    margin-top:100px;
+    margin-top:150px;
 }
 
 .aboutVoiceImageWrapper, .aboutVoiceParaWrapper{
