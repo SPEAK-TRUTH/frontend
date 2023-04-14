@@ -82,13 +82,13 @@ body {
   font-weight: 600;
 }
 
-.key {
+.input-key {
   border: 1px solid rgba(39, 162, 219);
   border-radius: 0.3rem;
   padding: 0.5rem 1rem;
 }
 
-.check {
+.btn-check {
   color: #fff;
   background-color: rgba(39, 162, 219);
   width: 100px;

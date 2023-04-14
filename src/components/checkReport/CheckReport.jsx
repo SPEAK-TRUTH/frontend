@@ -68,10 +68,10 @@ const CheckReport = () => {
               <p className="form-head">Report key*</p>
               <input
                 type="text"
-                className="key"
+                className="input-key"
                 placeholder="letmereport1234"
               />
-              <button className="btn check">Check</button>
+              <button className="btn btn-check">Check</button>
             </div>
           </div>
         </div>
