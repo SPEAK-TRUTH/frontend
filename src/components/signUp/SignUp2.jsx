@@ -32,7 +32,7 @@ const SignUp2 = () => {
               <h3 className="text-signup">Sign Up</h3>
 
               {/* Form */}
-              <form className="signup-form" onSubmit={handleSubmit(onsubmit)}>
+              <form className="signup-form" onSubmit={handleSubmit(onSubmit)}>
                 {/* <FormItem/> */}
                 <div className="form-item">
                   <label className="form-item-title" htmlFor="username">Username</label>
@@ -90,7 +90,8 @@ const SignUp2 = () => {
                   <p className="form-err">{errors.password?.message}</p>
                 </div>
 
-                <button type="submit" className="signup-btn" disabled={!isDirty}>
+                {/* <button type="submit" className="signup-btn" disabled={!isDirty}> */}
+                <button type="submit" className="signup-btn">
                   SignUp
                 </button>
                 <p className="signup-text-msg">
