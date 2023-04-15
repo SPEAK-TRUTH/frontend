@@ -1,15 +1,17 @@
-import Login from "./components/login";
-import SignUp from "./components/SignUp";
+import Login from "./components/login/Login";
+import SignUp from "./components/signUp/SignUp";
 import Confirmation from "./components/confirmation/Confirmation";
 import CheckReport from "./components/checkReport/CheckReport";
+import SignUp2 from "./components/signUp/SignUp2";
 
 function App() {
   return (
     <div className="App">
       {/* <Login /> */}
-      {/* <SignUp/> */}
       {/* <Confirmation /> */}
-      <CheckReport />
+      {/* <SignUp/> */}
+      <SignUp2 />
+      {/* <CheckReport /> */}
     </div>
   );
 }
