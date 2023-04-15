@@ -1,5 +1,5 @@
 import React from "react";
-import './login.css';
+import './login2.css';
 import LOGO from "../../assets/images/speaktruth-low-resolution-logo-white-on-transparent-background.png";
 import BG_IMG from "../../assets/images/listen-gfd3aad7e6_1920.jpeg";
 import FormItem from "../formItem/FormItem";
