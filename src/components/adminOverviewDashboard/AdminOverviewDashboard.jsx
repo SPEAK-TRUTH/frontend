@@ -1,5 +1,5 @@
 import React from "react";
-// import LOGO from "../../assets/images/speaktruth-high-resolution-logo-color-on-transparent-background.png";
+import LOGO from "../../assets/topHeaderImages/speaktruthLogo.png";
 import "./adminOverviewDashboard.css";
 
 const AdminOverviewDashboard = () => {
@@ -10,7 +10,7 @@ const AdminOverviewDashboard = () => {
         <div className="topHeaderWrapper">
           {/* left */}
           <div className="header-left">
-            {/* <img className="logo" src={LOGO} /> */}
+            <img className="logo" src={LOGO} />
           </div>
 
           {/* right */}

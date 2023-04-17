@@ -29,7 +29,13 @@ body {
   width: 350px;
   height: auto;
   transition: width 0.5s;
-  padding: 20px;
+  padding: 20px 0;
+}
+
+.logo {
+    height: auto;
+    width: 100%;
+    padding: 10px;
 }
 
 .btn {
