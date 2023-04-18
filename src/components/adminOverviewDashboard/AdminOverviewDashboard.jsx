@@ -1,8 +1,48 @@
 import React from "react";
 import LOGO from "../../assets/topHeaderImages/speaktruthLogo.png";
 import "./adminOverviewDashboard.css";
+import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
 const AdminOverviewDashboard = () => {
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+  );
+
+  const data = {
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+    datasets: [
+      {
+        label: "",
+        data: [13, 23, 32, 43, 23, 57, 64, 72, 88, 75, 93, 78],
+        borderColor: "rgba(39, 162, 219, 0.3)",
+      },
+    ],
+  };
+
+  const options = {
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
+
   return (
     <>
       <div className="container">
@@ -23,7 +63,7 @@ const AdminOverviewDashboard = () => {
         {/* Side-bar */}
         <div className="main-container">
           <div className="side-bar">
-            <div className="bar-item">Overview</div>
+            <div className="bar-item overview">Overview</div>
             <div className="bar-item">Report</div>
           </div>
 
@@ -35,6 +75,14 @@ const AdminOverviewDashboard = () => {
                   <div className="inner-wrapper">
                     <h3 className="bold">Monthly Reports</h3>
                     {/* graph */}
+                    <Line
+                      height={300}
+                      width={400}
+                      data={data}
+                      options={options}
+                      //   data={graphData}
+                      //   id="chart-key"
+                    />
                   </div>
                 </div>
               </div>

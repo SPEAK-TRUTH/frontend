@@ -72,6 +72,13 @@ body {
 
 .bar-item {
   margin-bottom: 1rem;
+  padding: 0.2rem 0 0.2rem 1rem;
+}
+
+.overview {
+  color: rgba(39, 162, 219);
+  background: rgba(39, 162, 219, 0.1);
+  border-left: 2px solid rgba(39, 162, 219);
 }
 
 /* main-container */
