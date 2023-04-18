@@ -43,6 +43,32 @@ const AdminOverviewDashboard = () => {
     },
   };
 
+  const departmentArr = [
+    { department: "Marketing", value: 7 },
+    { department: "Operation", value: 4 },
+    { department: "IT", value: 3 },
+  ];
+
+  const categoryArr = [
+    { category: "Harassment", value: 7 },
+    { category: "Safety", value: 3 },
+    { category: "Theft", value: 5 },
+  ];
+
+  const department = departmentArr.map((item) => (
+    <div key={item.department} className="item">
+      <p>{item.department}</p>
+      <p>{item.value}</p>
+    </div>
+  ));
+
+  const category = categoryArr.map((item) => (
+    <div key={item.category} className="item">
+      <p>{item.category}</p>
+      <p>{item.value}</p>
+    </div>
+  ));
+
   return (
     <>
       <div className="container">
@@ -69,6 +95,7 @@ const AdminOverviewDashboard = () => {
 
           {/* Main Contents */}
           <div className="main-wrapper">
+            {/* Main Content - left */}
             <div className="left">
               <div className="content">
                 <div className="wrapper-gray">
@@ -76,8 +103,8 @@ const AdminOverviewDashboard = () => {
                     <h3 className="bold">Monthly Reports</h3>
                     {/* graph */}
                     <Line
-                      height={300}
-                      width={400}
+                      height={400}
+                      width={550}
                       data={data}
                       options={options}
                       //   data={graphData}
@@ -87,42 +114,23 @@ const AdminOverviewDashboard = () => {
                 </div>
               </div>
             </div>
+
+            {/* Main Content - right */}
             <div className="right">
               <div className="content">
                 <div className="wrapper-gray">
                   <div className="inner-wrapper">
                     <h3 className="bold">By department</h3>
-                    <div className="item">
-                      <p>Marketing</p>
-                      <p>7</p>
-                    </div>
-                    <div className="item">
-                      <p>Operation</p>
-                      <p>6</p>
-                    </div>
-                    <div className="item">
-                      <p>IT</p>
-                      <p>4</p>
-                    </div>
+                    {department}
                   </div>
                 </div>
               </div>
+
               <div className="content">
                 <div className="wrapper-gray">
                   <div className="inner-wrapper">
                     <h3 className="bold">By Category</h3>
-                    <div className="item">
-                      <p>Harassment</p>
-                      <p>7</p>
-                    </div>
-                    <div className="item">
-                      <p>Safety</p>
-                      <p>6</p>
-                    </div>
-                    <div className="item">
-                      <p>Theft</p>
-                      <p>4</p>
-                    </div>
+                    {category}
                   </div>
                 </div>
               </div>
