@@ -89,7 +89,7 @@ const AdminOverviewDashboard = () => {
         {/* Side-bar */}
         <div className="main-container">
           <div className="side-bar">
-            <div className="bar-item overview">Overview</div>
+            <div className="bar-item pointer">Overview</div>
             <div className="bar-item">Report</div>
           </div>
 
