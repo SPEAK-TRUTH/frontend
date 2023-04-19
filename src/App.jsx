@@ -3,6 +3,7 @@
 // import Confirmation from "./components/confirmation/Confirmation";
 // import CheckReport from "./components/checkReport/CheckReport";
 import AdminOverviewDashboard from "./components/adminOverviewDashboard/AdminOverviewDashboard";
+import AdminReportDashboard from "./components/adminReportDashboard/AdminReportDashboard";
 import Login2 from "./components/login/Login2";
 import SignUp2 from "./components/signUp/SignUp2";
 
@@ -15,7 +16,8 @@ function App() {
       {/* <SignUp/> */}
       {/* <SignUp2 /> */}
       {/* <CheckReport /> */}
-      <AdminOverviewDashboard />
+      {/* <AdminOverviewDashboard /> */}
+      <AdminReportDashboard />
     </div>
   );
 }
