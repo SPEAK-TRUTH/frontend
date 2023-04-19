@@ -102,31 +102,31 @@ export const data = [
 
 export const columns = [
     {
-        header: 'id',
+        Header: 'id',
         accessor: 'id',
     },
     {
-        header: 'Department',
+        Header: 'Department',
         accessor: 'Department',
     },
     {
-        header: 'Category',
+        Header: 'Category',
         accessor: 'Category',
     },
     {
-        header: 'Subject',
+        Header: 'Subject',
         accessor: 'Subject',
     },
     {
-        header: 'Description',
+        Header: 'Description',
         accessor: 'Description',
     },
     {
-        header: 'Reported',
+        Header: 'Reported',
         accessor: 'Reported',
     },
     {
-        header: 'Assignee',
+        Header: 'Assignee',
         accessor: 'Assignee',
     },
 ]

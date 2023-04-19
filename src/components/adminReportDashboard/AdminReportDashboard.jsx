@@ -1,28 +1,33 @@
 import React from "react";
 import LOGO from "../../assets/topHeaderImages/speaktruthLogo.png";
 import "./adminReportDashboard.css";
-import { useTable } from "react-table";
+import { useTable, usePagination } from "react-table";
 import { data, columns } from "./data/tableData";
 
 const AdminReportDashboard = () => {
-  const departmentArr = [
-    { department: "Marketing", value: 7 },
-    { department: "Operation", value: 4 },
-    { department: "IT", value: 3 },
-  ];
-
-  const department = departmentArr.map((item) => (
-    <div key={item.department} className="item">
-      <p>{item.department}</p>
-      <p>{item.value}</p>
-    </div>
-  ));
-
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    page,
+    prepareRow,
+    canPreviousPage,
+    canNextPage,
+    pageOptions,
+    pageCount,
+    gotoPage,
+    nextPage,
+    previousPage,
+    setPageSize,
+    state: { pageIndex, pageSize },
+  } = useTable(
+    {
       columns,
       data,
-    });
+      initialState: { pageIndex: 0 },
+    },
+    usePagination
+  );
 
   return (
     <>
@@ -56,7 +61,7 @@ const AdminReportDashboard = () => {
                   <tr {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map((columns) => (
                       <th {...columns.getHeaderProps()}>
-                        {columns.render("header")}
+                        {columns.render("Header")}
                       </th>
                     ))}
                   </tr>
@@ -64,7 +69,7 @@ const AdminReportDashboard = () => {
               </thead>
 
               <tbody {...getTableBodyProps()}>
-                {rows.map((row, i) => {
+                {page.map((row, i) => {
                   prepareRow(row);
                   return (
                     <tr {...row.getRowProps()}>
@@ -80,6 +85,47 @@ const AdminReportDashboard = () => {
                 })}
               </tbody>
             </table>
+
+            <div className="pagination">
+              <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+                {"<<"}
+              </button>{" "}
+              <button
+                onClick={() => previousPage()}
+                disabled={!canPreviousPage}
+              >
+                {"<"}
+              </button>{" "}
+              <span>
+                Page{" "}
+                <strong>
+                  {pageIndex + 1} of {pageOptions.length}
+                </strong>{" "}
+              </span>
+              <button onClick={() => nextPage()} disabled={!canNextPage}>
+                {">"}
+              </button>{" "}
+              <button
+                onClick={() => gotoPage(pageCount - 1)}
+                disabled={!canNextPage}
+              >
+                {">>"}
+              </button>{" "}
+              {/* <span>
+                | Go to page:{" "}
+                <input
+                  type="number"
+                  defaultValue={pageIndex + 1}
+                  onChange={(e) => {
+                    const page = e.target.value
+                      ? Number(e.target.value) - 1
+                      : 0;
+                    gotoPage(page);
+                  }}
+                  style={{ width: "100px" }}
+                />
+              </span> */}
+            </div>
           </div>
         </div>
 

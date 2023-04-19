@@ -120,6 +120,11 @@ tr {
   white-space: nowrap;
 }
 
+/* pagination */
+.pagination {
+  margin: 0 auto;
+}
+
 /* Footer */
 .footer {
   background: rgba(39, 162, 219, 0.1);
