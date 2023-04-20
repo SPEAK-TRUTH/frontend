@@ -8,8 +8,8 @@ import About from "./pages/about/About.jsx";
 import FAQ from "./pages/FAQ/FAQ.jsx";
 import Footer from "./components/footer/Footer.jsx";
 
-import Login from "./components/login";
-import SignUp2 from "./components/SignUp2";
+// import Login from "./components/login";
+// import SignUp2 from "./components/SignUp2";
 
 // css
 import "./App.css"
