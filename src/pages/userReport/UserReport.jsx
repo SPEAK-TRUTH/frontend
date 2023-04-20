@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
-import DOMPurify from 'dompurify';
+// import axios from 'axios';
+// import DOMPurify from 'dompurify';
 
 import Footer from "../../components/footer/Footer"
 import Chat from "../../components/chat/Chat";
