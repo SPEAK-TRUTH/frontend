@@ -9,6 +9,9 @@ import TopHeader from "../../components/topHeader/TopHeader.jsx"
 // css
 import "./home.css"
 import Meeting from "../../assets/homeImages/meeting.jpeg"
+import FAQ from "../FAQ/FAQ.jsx";
+import About from "../about/About.jsx";
+import Footer from "../../components/footer/Footer.jsx";
 
 
 
@@ -54,6 +57,10 @@ const Home = () => {
       <div className="homeShortIntroduction">
         <h3>SPEAKTRUTH provides support for a variety of workplace, educational, and cultural settings.</h3>
       </div>
+
+      <About />
+      <FAQ />
+      <Footer />
     </div>
   )
 }
