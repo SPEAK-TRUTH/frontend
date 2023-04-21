@@ -52,7 +52,7 @@ const Confirmation = () => {
           </div>
         </div>
 
-        {/* Main Contents */}
+        {/* Main Contents */} 
         <div className="main-container">
           <div className="wrapper">
             <div className="top-wrapper">
