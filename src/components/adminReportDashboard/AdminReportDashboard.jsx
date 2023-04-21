@@ -1,7 +1,7 @@
 import React from "react";
 import LOGO from "../../assets/topHeaderImages/speaktruthLogo.png";
 import "./adminReportDashboard.css";
-import { useTable, usePagination } from "react-table";
+import { useTable, usePagination, useSortBy } from "react-table";
 import { data, columns } from "./data/tableData";
 
 const AdminReportDashboard = () => {
@@ -26,7 +26,8 @@ const AdminReportDashboard = () => {
       data,
       initialState: { pageIndex: 0 },
     },
-    usePagination
+    useSortBy,
+    usePagination,
   );
 
 
@@ -61,8 +62,11 @@ const AdminReportDashboard = () => {
                 {headerGroups.map((headerGroup) => (
                   <tr {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map((columns) => (
-                      <th {...columns.getHeaderProps()}>
+                      <th {...columns.getHeaderProps(columns.getSortByToggleProps())}>
                         {columns.render("Header")}
+                        <span>
+                          {columns.isSorted ? (columns.isSortedDesc ? '🔽' : '🔼'): ''}
+                        </span>
                       </th>
                     ))}
                   </tr>
