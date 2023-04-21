@@ -1,11 +1,9 @@
-import Login from "./components/login";
-import SignUp from "./components/SignUp";
+import Confirmation from "./components/confirmation/Confirmation";
 
 function App() {
   return (
     <div className="App">
-      {/* <Login /> */}
-      <SignUp/>
+      <Confirmation />
     </div>
   );
 }

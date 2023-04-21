@@ -1,10 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import LOGO from "../../assets/images/speaktruth-high-resolution-logo-color-on-transparent-background.png";
 import "./confirmation.css";
-import { IconContext } from "react-icons";
-import { BsShieldFillExclamation } from "react-icons/bs";
+// import { BsShieldFillExclamation } from "react-icons/bs";
+// import LOGO from "../../assets/images/speaktruth-high-resolution-logo-color-on-transparent-background.png";
+// import { useState, useEffect } from "react";
 
 const Confirmation = () => {
   //   const showSettings = (event) => event.preventDefault();
@@ -30,7 +28,7 @@ const Confirmation = () => {
 
           {/* left */}
           <div className="header-left">
-            <img className="logo" src={LOGO} />
+            {/* <img className="logo" src={LOGO} /> */}
           </div>
 
           {/* <div className="topHeaderSpeakTruthLogoWrapper">
@@ -66,7 +64,7 @@ const Confirmation = () => {
             </div>
             <div className="blue-container">
               {/* logo */}
-                <BsShieldFillExclamation className="icon" />
+                {/* <BsShieldFillExclamation className="icon" /> */}
               <p className="text inner-text">
                 Download or copy and safely store this key. Without it, you
                 won't be able to check the report and communicate further with
