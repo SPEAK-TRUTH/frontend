@@ -21,6 +21,30 @@ const Chat = () => {
       sender: "receiver",
       time: "12:36 PM",
     },
+    {
+      id: 2,
+      text: "Hi there!",
+      sender: "sender",
+      time: "12:35 PM",
+    },
+    {
+      id: 2,
+      text: "Hi there!",
+      sender: "sender",
+      time: "12:35 PM",
+    },
+    {
+      id: 1,
+      text: "Hello!",
+      sender: "receiver",
+      time: "12:35 PM",
+    },
+    {
+      id: 1,
+      text: "Hello!",
+      sender: "receiver",
+      time: "12:35 PM",
+    },
   ]);
 
   const chatBoxRef = useRef(null);
@@ -49,19 +73,18 @@ const Chat = () => {
     <>
     <div className="chat-container">
       <div ref={chatBoxRef} className="chat-box">
-        {messages.map((message) => (
-          <div
-            key={message.id}
-            className={`message ${message.sender === "sender" ? "sender" : "receiver"}`}
-          >
-            <div className="message-text-container">
-              <p className="message-text">{message.text}</p>
-            </div>
-            <div className="message-time-container">
-              <p className="message-time">{message.time}</p>
-            </div>
+      {messages.map((message) => (
+        <div
+          key={message.id}
+          className={`message ${message.sender === "sender" ? "sender" : "receiver"}`}
+        >
+          <div className="message-text-container">
+            <p className="message-text">{message.text}</p>
           </div>
-        ))}
+          <p className="message-time">{message.time}</p> {/* Moved inside the message div */}
+        </div>
+      ))}
+
       </div>
       
     </div>

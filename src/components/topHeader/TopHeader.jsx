@@ -16,6 +16,8 @@ import Sidebar from "../sidebar/Sidebar";
 
 
 const TopHeader = () => {
+  //it is just temp
+  const user = true;
 
   const showSettings = (event) => {
     event.preventDefault();
@@ -53,34 +55,29 @@ const TopHeader = () => {
       {/* box2 */}
       
         <div className='topHeaderlinks'  >
-          {/* <Link to='#' className="topHeader_link">
-            <span className='topHeaderAbout_link'>About</span>
-          </Link>
-
-          <Link to='#' className="topHeader_link">
-            <span className='topHeaderFaq_link'>FAQ</span>
-          </Link>
-
-          <Link to='#' className="topHeader_link">
-            <span className='topHeaderPrivacy_link'>Privacy </span>
-          </Link>
-
-          <Link to='#' className="topHeader_link">
-            <span className='topHeaderReport_link'>Report</span>
-          </Link> */}
-
-          <a href="#" className="topHeader_link">
-            <span className='topHeaderAbout_link'>About</span>
-          </a>
-          <a href="#" className="topHeader_link">
-          <span className='topHeaderFaq_link'>FAQ</span>
-          </a>
-          <a href="#" className="topHeader_link">
-          <span className='topHeaderPrivacy_link'>Privacy </span>
-          </a>
-          <a href="#" className="topHeader_link">
-          <span className='topHeaderReport_link'>Report</span>
-          </a>
+          {user ? <>
+                      <a href="#" className="topHeader_link">
+                        <span className='topHeaderReport_link'>Check a Report</span>
+                      </a>
+                      <a href="#" className="topHeader_link">
+                        <span className='topHeaderReport_link'>Create a Report</span>
+                      </a>
+                  </>
+                : <>
+                    <a href="#" className="topHeader_link">
+                      <span className='topHeaderAbout_link'>About</span>
+                    </a>
+                    <a href="#" className="topHeader_link">
+                      <span className='topHeaderFaq_link'>FAQ</span>
+                    </a>
+                    <a href="#" className="topHeader_link">
+                      <span className='topHeaderPrivacy_link'>Privacy </span>
+                    </a>
+                    <a href="#" className="topHeader_link">
+                      <span className='topHeaderReport_link'>Report</span>
+                    </a>
+                  </>
+          }
         </div>
         {windowSize > largeScreen ? (<></>) : (
             <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />

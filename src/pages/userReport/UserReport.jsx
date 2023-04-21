@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 
 import Footer from "../../components/footer/Footer"
 import Chat from "../../components/chat/Chat";
+import TopHeader from "../../components/topHeader/TopHeader";
 
 import "./userReport.css"
 
@@ -63,6 +64,7 @@ const UserReport = () => {
 
   return (
     <div className='userReport'>
+        <TopHeader />
         <div className="report">
             <div className="reportID">
                 <h2>Report ID: <span>Letmeseeyourreport123</span> </h2>
