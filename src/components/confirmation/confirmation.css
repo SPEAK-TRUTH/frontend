@@ -1,13 +1,13 @@
 body {
-  /* width: 100vw; */
-  /* min-height: 100vh; */
+  width: 100vw;
+  min-height: 100vh;
   box-sizing: border-box;
   position: relative;
   padding: 0;
   margin: 0;
 }
 
-.container {
+.confirmation-container {
   min-width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -36,11 +36,18 @@ body {
   padding: 20px;
 }
 
+.logo {
+  height: 100px;
+  width: 400px;
+}
+
 .btn {
   border: 1px solid rgba(39, 162, 219);
   padding: 0.4rem 1rem;
   font-weight: 600;
   border-radius: 0.3rem;
+  background: #fff;
+  cursor: pointer;
 }
 
 .check {
@@ -118,6 +125,7 @@ body {
   font-weight: 600;
   border: 2px solid rgba(39, 162, 219);
   color: rgba(39, 162, 219);
+  cursor: pointer;
 }
 
 /* Footer */

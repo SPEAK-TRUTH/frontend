@@ -1,34 +1,23 @@
 import React from "react";
 import "./confirmation.css";
-// import { BsShieldFillExclamation } from "react-icons/bs";
+import { BsShieldFillExclamation } from "react-icons/bs";
+import SpeakTruthFullLogo from "../../assets/topHeaderImages/speaktruthLogo.png";
+
 // import LOGO from "../../assets/images/speaktruth-high-resolution-logo-color-on-transparent-background.png";
 // import { useState, useEffect } from "react";
 
 const Confirmation = () => {
-  //   const showSettings = (event) => event.preventDefault();
-
-  //   const smallScreen = 576;
-  //   const mediumScreen = 768;
-  //   const largeScreen = 1200;
-
-  //   const [windowSize, setWindowSize] = useState([window.innerWidth]);
-
-  //   useEffect(() => {
-  //     const handleWindowResize = () => setWindowSize([window.innerWidth]);
-  //     window.addEventListener("resize", handleWindowResize);
-  //     return () => window.removeEventListener("resize", handleWindowResize);
-  //   });
 
   return (
     <>
-      <div className="container">
+      <div className="confirmation-container">
         {/* Header */}
         <div className="topHeaderWrapper">
           {/* {windowSize < largeScreen ? (<Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />) : <></>} */}
 
           {/* left */}
           <div className="header-left">
-            {/* <img className="logo" src={LOGO} /> */}
+            <img className="logo" src={SpeakTruthFullLogo} />
           </div>
 
           {/* <div className="topHeaderSpeakTruthLogoWrapper">
@@ -52,7 +41,7 @@ const Confirmation = () => {
           </div>
         </div>
 
-        {/* Main Contents */} 
+        {/* Main Contents */}
         <div className="main-container">
           <div className="wrapper">
             <div className="top-wrapper">
@@ -64,7 +53,7 @@ const Confirmation = () => {
             </div>
             <div className="blue-container">
               {/* logo */}
-                {/* <BsShieldFillExclamation className="icon" /> */}
+                <BsShieldFillExclamation className="icon" />
               <p className="text inner-text">
                 Download or copy and safely store this key. Without it, you
                 won't be able to check the report and communicate further with
