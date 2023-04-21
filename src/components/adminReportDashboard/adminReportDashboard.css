@@ -44,6 +44,7 @@ body {
   padding: 0.4rem 1rem;
   font-weight: 600;
   border-radius: 0.3rem;
+  cursor: pointer;
 }
 
 .create {
@@ -54,6 +55,7 @@ body {
 .logout {
   margin-left: 3rem;
   color: rgba(39, 162, 219);
+  background: #fff;
 }
 
 .main-container {
@@ -83,8 +85,10 @@ body {
 }
 
 /* main-container */
-.main-wrapper {
+.main-wrapper-table {
   display: flex;
+  flex-direction: column;
+  gap: 3rem;
   align-items: center;
   margin: 0 auto;
   width: 80%;
@@ -95,9 +99,23 @@ table {
   width: 100%;
   margin: 0 auto;
   text-align: left;
+  overflow-y: auto;
+  overflow-x: auto;
   /* overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; */
+}
+
+thead {
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+tbody {
+  overflow-y: scroll;
+  overflow-x: scroll;
+  /* height: 400px;
+  width: 400px; */
 }
 
 th,
@@ -115,7 +133,6 @@ tr:nth-child(even) {
 
 tr {
   overflow: hidden;
-
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -123,6 +140,19 @@ tr {
 /* pagination */
 .pagination {
   margin: 0 auto;
+}
+
+.btn-arrow {
+  margin: 0 .3rem;
+  cursor: pointer;
+  color: rgba(39, 162, 219);
+
+  background: #fff;
+  border: 1px solid rgba(39, 162, 219);
+}
+
+.page-text {
+  margin: 0 .8rem;
 }
 
 /* Footer */
@@ -158,7 +188,7 @@ tr {
     padding: 0 1rem;
   }
 
-  .main-wrapper {
+  .main-wrapper-table {
     gap: 3rem;
   }
 
@@ -184,7 +214,7 @@ tr {
     padding: 1rem 3rem;
   }
 
-  .main-wrapper {
+  .main-wrapper-table {
     justify-content: center;
   }
 }

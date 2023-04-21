@@ -1,6 +1,6 @@
 export const data = [
     {
-        id: 1,
+        Id: 1,
         Department: 'Marketing',
         Category: 'Harassment',
         Subject: 'Hostile work environment',
@@ -9,7 +9,7 @@ export const data = [
         Assignee: 'John Doe',
     },
     {
-        id: 2,
+        Id: 2,
         Department: 'Operation',
         Category: 'Safety',
         Subject: 'Unsafe work condition',
@@ -18,7 +18,7 @@ export const data = [
         Assignee: 'Naoto Tokoyoda',
     },
     {
-        id: 1,
+        Id: 1,
         Department: 'Marketing',
         Category: 'Harassment',
         Subject: 'Hostile work environment',
@@ -27,7 +27,7 @@ export const data = [
         Assignee: 'John Doe',
     },
     {
-        id: 2,
+        Id: 2,
         Department: 'Operation',
         Category: 'Safety',
         Subject: 'Unsafe work condition',
@@ -36,7 +36,7 @@ export const data = [
         Assignee: 'Naoto Tokoyoda',
     },
     {
-        id: 1,
+        Id: 1,
         Department: 'Marketing',
         Category: 'Harassment',
         Subject: 'Hostile work environment',
@@ -45,7 +45,7 @@ export const data = [
         Assignee: 'John Doe',
     },
     {
-        id: 2,
+        Id: 2,
         Department: 'Operation',
         Category: 'Safety',
         Subject: 'Unsafe work condition',
@@ -54,7 +54,7 @@ export const data = [
         Assignee: 'Naoto Tokoyoda',
     },
     {
-        id: 1,
+        Id: 1,
         Department: 'Marketing',
         Category: 'Harassment',
         Subject: 'Hostile work environment',
@@ -63,7 +63,7 @@ export const data = [
         Assignee: 'John Doe',
     },
     {
-        id: 2,
+        Id: 2,
         Department: 'Operation',
         Category: 'Safety',
         Subject: 'Unsafe work condition',
@@ -72,7 +72,7 @@ export const data = [
         Assignee: 'Naoto Tokoyoda',
     },
     {
-        id: 1,
+        Id: 1,
         Department: 'Marketing',
         Category: 'Harassment',
         Subject: 'Hostile work environment',
@@ -81,7 +81,7 @@ export const data = [
         Assignee: 'John Doe',
     },
     {
-        id: 2,
+        Id: 2,
         Department: 'Operation',
         Category: 'Safety',
         Subject: 'Unsafe work condition',
@@ -90,7 +90,7 @@ export const data = [
         Assignee: 'Naoto Tokoyoda',
     },
     {
-        id: 1,
+        Id: 1,
         Department: 'Marketing',
         Category: 'Harassment',
         Subject: 'Hostile work environment',
@@ -102,8 +102,8 @@ export const data = [
 
 export const columns = [
     {
-        Header: 'id',
-        accessor: 'id',
+        Header: 'Id',
+        accessor: 'Id',
     },
     {
         Header: 'Department',

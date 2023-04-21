@@ -1,10 +1,24 @@
 import React from "react";
 import LOGO from "../../assets/topHeaderImages/speaktruthLogo.png";
 import "./adminReportDashboard.css";
-import { useTable, usePagination } from "react-table";
+import { useTable, usePagination, useFilters, useGlobalFilter } from "react-table";
 import { data, columns } from "./data/tableData";
+import {matchSorter} from 'match-sorter';
 
 const AdminReportDashboard = () => {
+
+  function GlobalFilter({
+    preGlobalFilteredRows,
+    globalFilter,
+    setGlobalFilter,
+  }) {
+    const count = preGlobalFilteredRows.length
+    const [value, setValue] = React.useState(globalFilter)
+    const onChange = useAsyncDebounce(value => {
+      setGlobalFilter(value || undefined)
+    }, 200)
+  }
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -20,15 +34,80 @@ const AdminReportDashboard = () => {
     previousPage,
     setPageSize,
     state: { pageIndex, pageSize },
+    preGlobalFilteredRows,
+    setGlobalFilter,
   } = useTable(
     {
       columns,
       data,
       initialState: { pageIndex: 0 },
     },
-    usePagination
+    usePagination,
+    useFilters,
+    useGlobalFilter
   );
 
+  // This is a custom filter UI for selecting
+// a unique option from a list
+function SelectColumnFilter({
+  column: { filterValue, setFilter, preFilteredRows, id },
+}) {
+  // Calculate the options for filtering
+  // using the preFilteredRows
+  const options = React.useMemo(() => {
+    const options = new Set()
+    preFilteredRows.forEach(row => {
+      options.add(row.values[id])
+    })
+    return [...options.values()]
+  }, [id, preFilteredRows])
+
+  // Render a multi-select box
+  return (
+    <select
+      value={filterValue}
+      onChange={e => {
+        setFilter(e.target.value || undefined)
+      }}
+    >
+      <option value="">All</option>
+      {options.map((option, i) => (
+        <option key={i} value={option}>
+          {option}
+        </option>
+      ))}
+    </select>
+  )
+}
+
+  function fuzzyTextFilterFn(rows, id, filterValue) {
+    return matchSorter(rows, filterValue, { keys: [row => row.values[id]] })
+  }
+
+  // Let the table remove the filter if the string is empty
+  fuzzyTextFilterFn.autoRemove = val => !val
+
+  function Table({ columns, data }) {
+    const filterTypes = React.useMemo(
+      () => ({
+        // Add a new fuzzyTextFilterFn filter type.
+        fuzzyText: fuzzyTextFilterFn,
+        // Or, override the default text filter to use
+        // "startWith"
+        text: (rows, id, filterValue) => {
+          return rows.filter(row => {
+            const rowValue = row.values[id]
+            return rowValue !== undefined
+              ? String(rowValue)
+                  .toLowerCase()
+                  .startsWith(String(filterValue).toLowerCase())
+              : true
+          })
+        },
+      }),
+      []
+    )
+      }
 
   return (
     <>
@@ -55,7 +134,8 @@ const AdminReportDashboard = () => {
           </div>
 
           {/* Main Contents */}
-          <div className="main-wrapper-table">
+          <div className="main-wrapper">
+          <div>{column.canFilter ? column.render('Filter') : null}</div>
             <table {...getTableProps()}>
               <thead>
                 {headerGroups.map((headerGroup) => (
@@ -68,6 +148,14 @@ const AdminReportDashboard = () => {
                   </tr>
                 ))}
               </thead>
+
+              <th>
+              <GlobalFilter
+                preGlobalFilteredRows={preGlobalFilteredRows}
+                globalFilter={state.globalFilter}
+                setGlobalFilter={setGlobalFilter}
+              />
+              </th>
 
               <tbody {...getTableBodyProps()}>
                 {page.map((row, i) => {
@@ -88,27 +176,25 @@ const AdminReportDashboard = () => {
             </table>
 
             <div className="pagination">
-              <button className="btn btn-arrow" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+              <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
                 {"<<"}
               </button>{" "}
               <button
                 onClick={() => previousPage()}
-                className="btn btn-arrow"
                 disabled={!canPreviousPage}
               >
                 {"<"}
               </button>{" "}
-              <span className="page-text">
+              <span>
                 Page{" "}
                 <strong>
                   {pageIndex + 1} of {pageOptions.length}
                 </strong>{" "}
               </span>
-              <button className="btn btn-arrow" onClick={() => nextPage()} disabled={!canNextPage}>
+              <button onClick={() => nextPage()} disabled={!canNextPage}>
                 {">"}
               </button>{" "}
               <button
-              className="btn btn-arrow"
                 onClick={() => gotoPage(pageCount - 1)}
                 disabled={!canNextPage}
               >
