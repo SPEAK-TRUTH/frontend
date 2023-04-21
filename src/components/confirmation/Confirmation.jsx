@@ -73,7 +73,7 @@ const Confirmation = () => {
               <div className="white-box">
                 <p className="key">letmereport1234</p>
               </div>
-              <button className="btn-copy">Copy</button>
+              <button className="btn-copy">Copy</button> 
             </div>
           </div>
         </div>
