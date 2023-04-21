@@ -16,8 +16,7 @@
   }
   
   .message {
-    position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     min-width: 10%;
     max-width: 70%;
     display: flex;
@@ -27,24 +26,27 @@
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative; 
   }
+  
+  .message-time {
+    font-size: 0.8rem;
+    margin-top: auto;
+    color: #888;
+    position: absolute;
+    bottom: -20px; 
+    right: 0; 
+    
+  }
+  
   
   .sender {
     align-self: flex-end;
     background-color: rgba(0, 0, 0, 0.1);;
   }
   
-  .message-time-container {
-    position: absolute;
-    bottom: -20px;
-    right: 0;
-    padding: 0 5px 0 0;
-  }
   
-  .sender .message-time-container {
-    left: auto;
-    right: 0;
-  }
+
   
   .message-text {
     margin-bottom: 0.2rem;
