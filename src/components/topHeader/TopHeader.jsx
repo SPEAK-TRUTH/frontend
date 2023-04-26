@@ -56,12 +56,12 @@ const TopHeader = () => {
       
         <div className='topHeaderlinks'  >
           {user ? <>
-                      <a href="#" className="topHeader_link">
-                        <span className='topHeaderReport_link'>Check a Report</span>
-                      </a>
-                      <a href="#" className="topHeader_link">
-                        <span className='topHeaderReport_link'>Create a Report</span>
-                      </a>
+                    <Link to='#' className="topHeader_link">
+                      <span className='topHeaderReport_link'>Overview</span>
+                    </Link>
+                    <Link to='#' className="topHeader_link">
+                      <span className='topHeaderReport_link'>Dashboard</span>
+                    </Link>
                   </>
                 : <>
                     <a href="#" className="topHeader_link">
