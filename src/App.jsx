@@ -5,9 +5,18 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home.jsx";
 import UserReport from "./pages/userReport/UserReport.jsx";
 import AdminReport from "./pages/adminReport/AdminReport.jsx"
+import AdminReportDashboard from "./components/adminReportDashboard/AdminReportDashboard.jsx";
+import AdminOverviewDashboard from "./components/adminOverviewDashboard/AdminOverviewDashboard.jsx"
+import CheckReport from "./components/checkReport/CheckReport.jsx"
+import Confirmation from "./components/confirmation/Confirmation.jsx"
+
+import Login from "./components/login/Login.jsx"
+import SignUp2 from "./components/signUp/SignUp2.jsx"
+
 
 // css
 import "./App.css"
+
 
 function App() {
 
@@ -16,8 +25,21 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={<Home />} />
+
+        {/* admin authentication */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signUp" element={<SignUp2 />} />
+
+        {/* repoter */}
         <Route path="/userReport" element={<UserReport />} />
+        <Route path="/confirmation" element={<Confirmation />} />
+
+        {/* admin */}
         <Route path="/adminReport" element={<AdminReport />} />
+        <Route path="/adminOverviewDashboard" element={<AdminOverviewDashboard />} />
+        <Route path="/adminReportDashboard" element={<AdminReportDashboard />} />
+        <Route path="/checkReport" element={<CheckReport />} />
+        
       </Routes>
     </Router>
     </div>

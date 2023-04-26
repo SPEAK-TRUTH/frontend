@@ -7,7 +7,7 @@ import People from "../../assets/aboutImages/people.jpeg"
 
 const About = () => {
   return (
-    <div className="about">
+    <div className="about" id="about">
         <div className="aboutSpeaktruthSection">
             <h1>About <span>SPEAKTRUTH</span></h1>
             <h3>At SPEAKTRUTH, our mission is to create a more equitable, safe, and inclusive workplace. We empower individuals and organizations to speak up against misconduct and harassment. Join us in creating positive change for the future.</h3>
