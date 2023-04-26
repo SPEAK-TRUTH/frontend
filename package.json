@@ -10,17 +10,18 @@
   },
   "dependencies": {
     "chart.js": "^4.2.1",
+    "match-sorter": "^6.3.1",
     "react": "^18.2.0",
-    "react-chartjs-2": "^5.2.0",
-    "react-hook-form": "^7.43.9",
-    "react-table": "^7.8.0",
-    "tailwindcss": "^3.3.1",
-    "yarn": "^1.22.19",
-
     "react-accessible-accordion": "^5.0.0",
     "react-burger-menu": "^3.0.9",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.8.0"
+    "react-hook-form": "^7.43.9",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.10.0",
+    "react-table": "^7.8.0",
+    "tailwindcss": "^3.3.1",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@stylelint/postcss-css-in-js": "^0.38.0",
@@ -28,8 +29,10 @@
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
     "nodemon": "^2.0.21",
+    "postcss": "^8.4.21",
+    "react-router-dom": "^6.9.0",
+    "tailwindcss": "^3.2.7",
     "vite": "^4.1.0"
   }
 }

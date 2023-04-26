@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import LOGO from "../../assets/images/speaktruth-high-resolution-logo-color-on-transparent-background.png";
 import "./checkReport.css";
-import { IconContext } from "react-icons";
-import { BsShieldFillExclamation } from "react-icons/bs";
 
 const CheckReport = () => {
   //   const showSettings = (event) => event.preventDefault();

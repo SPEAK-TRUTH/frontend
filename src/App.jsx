@@ -1,4 +1,3 @@
-
 // library
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -6,9 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home.jsx";
 import UserReport from "./pages/userReport/UserReport.jsx";
 import AdminReport from "./pages/adminReport/AdminReport.jsx"
-
-// import Login from "./components/login";
-// import SignUp2 from "./components/SignUp2";
 
 // css
 import "./App.css"
