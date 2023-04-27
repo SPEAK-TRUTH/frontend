@@ -9,6 +9,7 @@ import AdminReportDashboard from "./components/adminReportDashboard/AdminReportD
 import AdminOverviewDashboard from "./components/adminOverviewDashboard/AdminOverviewDashboard.jsx"
 import CheckReport from "./components/checkReport/CheckReport.jsx"
 import Confirmation from "./components/confirmation/Confirmation.jsx"
+import ReportForm from "./pages/reportForm/ReportForm.jsx";
 
 import Login from "./components/login/Login.jsx"
 import SignUp2 from "./components/signUp/SignUp2.jsx"
@@ -31,6 +32,7 @@ function App() {
         <Route path="/signUp" element={<SignUp2 />} />
 
         {/* repoter */}
+        <Route path="/reportForm" element={<ReportForm />} />
         <Route path="/userReport" element={<UserReport />} />
         <Route path="/confirmation" element={<Confirmation />} />
 

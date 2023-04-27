@@ -82,7 +82,7 @@ const TopHeader = () => {
                     <Link o='#' className="topHeader_link">
                       <span className='topHeaderPrivacy_link'>Privacy </span>
                     </Link>
-                    <Link to='#' className="topHeader_link">
+                    <Link to='/reportForm' className="topHeader_link">
                       <span className='topHeaderReport_link'>Report</span>
                     </Link>
                   </>
