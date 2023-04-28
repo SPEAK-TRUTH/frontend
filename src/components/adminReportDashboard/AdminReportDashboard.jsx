@@ -28,9 +28,8 @@ const AdminReportDashboard = () => {
       initialState: { pageIndex: 0 },
     },
     useSortBy,
-    usePagination,
+    usePagination
   );
-
 
   return (
     <>
@@ -63,10 +62,22 @@ const AdminReportDashboard = () => {
                 {headerGroups.map((headerGroup) => (
                   <tr {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map((columns) => (
-                      <th {...columns.getHeaderProps(columns.getSortByToggleProps())}>
+                      <th
+                        {...columns.getHeaderProps(
+                          columns.getSortByToggleProps()
+                        )}
+                      >
                         {columns.render("Header")}
                         <span>
-                          {columns.isSorted ? (columns.isSortedDesc ? '🔽' : '🔼'): ''}
+                          &nbsp; &nbsp;{" "}
+                          <span className="sort">
+                            sort
+                            {columns.isSorted
+                              ? columns.isSortedDesc
+                                ? "🔽"
+                                : "🔼"
+                              : ""}
+                          </span>
                         </span>
                       </th>
                     ))}
@@ -93,7 +104,11 @@ const AdminReportDashboard = () => {
             </table>
 
             <div className="pagination">
-              <button className="btn btn-arrow" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+              <button
+                className="btn btn-arrow"
+                onClick={() => gotoPage(0)}
+                disabled={!canPreviousPage}
+              >
                 {"<<"}
               </button>{" "}
               <button
@@ -109,11 +124,15 @@ const AdminReportDashboard = () => {
                   {pageIndex + 1} of {pageOptions.length}
                 </strong>{" "}
               </span>
-              <button className="btn btn-arrow" onClick={() => nextPage()} disabled={!canNextPage}>
+              <button
+                className="btn btn-arrow"
+                onClick={() => nextPage()}
+                disabled={!canNextPage}
+              >
                 {">"}
               </button>{" "}
               <button
-              className="btn btn-arrow"
+                className="btn btn-arrow"
                 onClick={() => gotoPage(pageCount - 1)}
                 disabled={!canNextPage}
               >

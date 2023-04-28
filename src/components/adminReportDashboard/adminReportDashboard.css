@@ -82,7 +82,7 @@
   flex-direction: column;
   gap: 3rem;
   align-items: center;
-  margin: 0 auto;
+  margin: 5rem auto;
   width: 80%;
 }
 
@@ -128,6 +128,11 @@ tr {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.sort {
+  color: gray;
+  text-decoration: underline;
 }
 
 /* pagination */
