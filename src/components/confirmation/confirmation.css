@@ -1,67 +1,18 @@
-body {
-  /* width: 100vw; */
-  /* min-height: 100vh; */
-  box-sizing: border-box;
-  position: relative;
-  padding: 0;
-  margin: 0;
-}
-
 .container {
-  min-width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  /* height: fit-content; */
-}
-
-/* Header */
-.topHeaderWrapper {
-  width: 90%;
-  height: auto;
-  margin: 0 auto;
-  transition: width 0.5s;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-left {
-  width: 350px;
-  height: auto;
-  transition: width 0.5s;
-  padding: 20px;
-}
-
-.btn {
-  border: 1px solid rgba(39, 162, 219);
-  padding: 0.6rem 1rem;
-  font-weight: 600;
-  border-radius: 0.3rem;
-  background: #fff;
-}
-
-.check {
-  margin-right: 3rem;
-  color: rgba(39, 162, 219);
-}
-
-.create {
-  color: #fff;
-  background-color: rgba(39, 162, 219);
+  width:95%;
+  margin: 0px auto 150px auto;
+  font-family: 'Open Sans';
 }
 
 /* Main Container */
 .main-container {
   text-align: center;
-  width: 100vw;
+  width: 100vh;
   margin: 0 auto;
 }
 
 .wrapper {
-  width: 70%;
+  width: 100%;
   margin: 3rem auto;
   display: flex;
   flex-direction: column;
@@ -81,7 +32,7 @@ body {
 .blue-container {
   background: rgba(39, 162, 219, 0.1);
   border-radius: 1rem;
-  padding: 3rem 3rem 0 3rem;
+  padding: 3rem 3rem 3rem 3rem;
   border: 1px solid #000;
   /* width: 90%; */
   margin: 0 auto;
@@ -94,10 +45,16 @@ body {
 }
 
 .white-box {
+  width:50%;
   background: #fff;
   padding: 1rem 0;
-  margin: 2rem 0;
+  margin-bottom:50px;
   border-radius: 0.3rem;
+
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin:0 auto;
 }
 
 .inner-text {
@@ -110,31 +67,24 @@ body {
   letter-spacing: 0.1rem;
 }
 
+.btnWrapper{
+  margin-top:50px;
+}
+
 .btn-copy {
   background: #fff;
   padding: 0.6rem 2rem;
   border-radius: 0.3rem;
-  margin-bottom: 2rem;
   font-weight: 600;
   border: 2px solid rgba(39, 162, 219);
   color: rgba(39, 162, 219);
+
+  margin-right:20px;
 }
 
-/* Footer */
-.footer {
-  background: rgba(39, 162, 219, 0.1);
-  width: 100%;
-  /* position: absolute; */
-  /* bottom: 0; */
-  /* margin-top: auto; */
-}
 
-.footer-text {
-  text-align: center;
-  padding: 1rem;
-  font-weight: 600;
-  font-size: 0.8rem;
-}
+
+
 
 /* Media query for screens smaller than 768px */
 @media (max-width: 768px) {

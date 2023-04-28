@@ -1,57 +1,44 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./confirmation.css";
 import { BsShieldFillExclamation } from "react-icons/bs";
-import LOGO from "../../assets/images/speaktruth-high-resolution-logo-color-on-transparent-background.png";
-// import { useState, useEffect } from "react";
+import Footer from "../footer/Footer";
+import TopHeader from "../topHeader/TopHeader";
 
 const Confirmation = () => {
-  //   const showSettings = (event) => event.preventDefault();
+  const location = useLocation();
+  // const reportKey = location.state?.reportKey;
+  const reportKey = "tandom report key";
+  const [copyButtonText, setCopyButtonText] = useState("Copy");
+  const navigate = useNavigate();
 
-  //   const smallScreen = 576;
-  //   const mediumScreen = 768;
-  //   const largeScreen = 1200;
+  const handleCopy = useCallback(() => {
+    navigator.clipboard.writeText(reportKey).then(
+      () => {
+        // Update the copy button text on success
+        setCopyButtonText("Copied!");
+        setTimeout(() => setCopyButtonText("Copy"), 2000);
+      },
+      () => {
+        // Update the copy button text on error
+        setCopyButtonText("Failed to copy");
+        setTimeout(() => setCopyButtonText("Copy"), 2000);
+      }
+    );
+  }, [reportKey]);
 
-  //   const [windowSize, setWindowSize] = useState([window.innerWidth]);
+  const goToCheckReport = () => {
+    navigate("/checkReport");
+  };
 
-  //   useEffect(() => {
-  //     const handleWindowResize = () => setWindowSize([window.innerWidth]);
-  //     window.addEventListener("resize", handleWindowResize);
-  //     return () => window.removeEventListener("resize", handleWindowResize);
-  //   });
+  if (!reportKey) {
+    return <div>No report key found.</div>;
+  }
 
   return (
     <>
       <div className="container">
-        {/* Header */}
-        <div className="topHeaderWrapper">
-          {/* {windowSize < largeScreen ? (<Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />) : <></>} */}
-
-          {/* left */}
-          <div className="header-left">
-            <img className="logo" src={LOGO} />
-          </div>
-
-          {/* <div className="topHeaderSpeakTruthLogoWrapper">
-          {windowSize <= mediumScreen ? (
-            <img className="topHeaderSpeakTruthLogo" src={LOGO} />
-          ) : (
-            <img className="topHeaderSpeakTruthFullLogo" src={LOGO} />
-          )}
-        </div> */}
-
-          {/* right */}
-          <div className="header-right">
-            {/* <Link to="/">
-            <button className="btn-check">Check a Report</button>
-          </Link>
-          <Link to="/">
-            <button className="btn-create">Create a Report</button>
-          </Link> */}
-            <button className="btn check">Check a Report</button>
-            <button className="btn create">Create a Report</button>
-          </div>
-        </div>
-
+        <TopHeader />
         {/* Main Contents */}
         <div className="main-container">
           <div className="wrapper">
@@ -64,24 +51,28 @@ const Confirmation = () => {
             </div>
             <div className="blue-container">
               {/* logo */}
-                <BsShieldFillExclamation className="icon" />
+              <BsShieldFillExclamation className="icon" />
               <p className="text inner-text">
                 Download or copy and safely store this key. Without it, you
                 won't be able to check the report and communicate further with
                 your organization
               </p>
-              <div className="white-box">
-                <p className="key">letmereport1234</p>
+              <div className="white-box">{reportKey}</div>
+
+              <div className="btnWrapper">
+              <button className="btn-copy" onClick={handleCopy}>
+                {copyButtonText}
+              </button>
+              <button className="btn-copy" onClick={goToCheckReport}>
+                Check Report
+              </button>
               </div>
-              <button className="btn-copy">Copy</button>
+              
             </div>
           </div>
         </div>
-        {/* Footer */}
-        <div className="footer">
-          <p className="footer-text">SPEAKTRUTH 2023. ALL RIGHTS RESERVED.</p>
-        </div>
       </div>
+      <Footer />
     </>
   );
 };
