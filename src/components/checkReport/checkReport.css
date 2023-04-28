@@ -1,62 +1,11 @@
-body {
-  box-sizing: border-box;
-  position: relative;
-  padding: 0;
-  margin: 0;
+.checkReport{
+  margin-bottom:150px;
+  font-family: 'Open Sans';
 }
-
-.confirmation-container {
-  min-width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  /* height: fit-content; */
-}
-
-/* Header */
-.topHeaderWrapper {
-  width: 90%;
-  height: auto;
-  margin: 0 auto;
-  transition: width 0.5s;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-left {
-  width: 350px;
-  height: auto;
-  transition: width 0.5s;
-  padding: 20px;
-}
-
-.logo {
-  width: 100%;
-  height: auto;
-}
-
-.create {
-  color: #fff;
-  background-color: rgba(39, 162, 219);
-}
-
-.btn {
-  border: 1px solid rgba(39, 162, 219);
-  padding: 0.6rem 1rem;
-  font-weight: 600;
-  border-radius: 0.3rem;
-  cursor: pointer;
-}
-
-
 /* Main Container */
 .main-container {
   text-align: center;
   width: 100vw;
-  margin: 0 auto;
 }
 
 .wrapper {
