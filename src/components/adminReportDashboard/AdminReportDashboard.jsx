@@ -3,6 +3,7 @@ import LOGO from "../../assets/topHeaderImages/speaktruthLogo.png";
 import "./adminReportDashboard.css";
 import { useTable, usePagination, useSortBy } from "react-table";
 import { data, columns } from "./data/tableData";
+import Footer from "../footer/Footer";
 
 const AdminReportDashboard = () => {
   const {
@@ -33,7 +34,7 @@ const AdminReportDashboard = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="admin-report-container">
         {/* Header */}
         <div className="topHeaderWrapper">
           {/* left */}
@@ -137,9 +138,10 @@ const AdminReportDashboard = () => {
         </div>
 
         {/* Footer */}
-        <div className="footer">
+        {/* <div className="footer">
           <p className="footer-text">SPEAKTRUTH 2023. ALL RIGHTS RESERVED.</p>
-        </div>
+        </div> */}
+        <Footer />
       </div>
     </>
   );
