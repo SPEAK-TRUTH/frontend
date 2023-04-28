@@ -1,55 +1,29 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import LOGO from "../../assets/images/speaktruth-high-resolution-logo-color-on-transparent-background.png";
 import "./checkReport.css";
+import TopHeader from "../topHeader/TopHeader"
+import Footer from "../footer/Footer"
 
 const CheckReport = () => {
-  //   const showSettings = (event) => event.preventDefault();
+  const [reportKey, setReportKey] = useState("");
+  const navigate = useNavigate();
 
-  //   const smallScreen = 576;
-  //   const mediumScreen = 768;
-  //   const largeScreen = 1200;
 
-  //   const [windowSize, setWindowSize] = useState([window.innerWidth]);
+  const handleChange = useCallback((e) => {
+    setReportKey(e.target.value);
+  }, []);
 
-  //   useEffect(() => {
-  //     const handleWindowResize = () => setWindowSize([window.innerWidth]);
-  //     window.addEventListener("resize", handleWindowResize);
-  //     return () => window.removeEventListener("resize", handleWindowResize);
-  //   });
+  const handleCheckReport = useCallback(() => {
+    // Fetch and display the report data using the entered report key
+    console.log("Checking report with key:", reportKey);
+    navigate(`/userReport/${reportKey}`);
+  }, [reportKey]);
 
   return (
     <>
-      <div className="container">
-        {/* Header */}
-        <div className="topHeaderWrapper">
-          {/* {windowSize < largeScreen ? (<Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />) : <></>} */}
-
-          {/* left */}
-          <div className="header-left">
-            <img className="logo" src={LOGO} />
-          </div>
-
-          {/* <div className="topHeaderSpeakTruthLogoWrapper">
-          {windowSize <= mediumScreen ? (
-            <img className="topHeaderSpeakTruthLogo" src={LOGO} />
-          ) : (
-            <img className="topHeaderSpeakTruthFullLogo" src={LOGO} />
-          )}
-        </div> */}
-
-          {/* right */}
-          <div className="header-right">
-            {/* <Link to="/">
-            <button className="btn-check">Check a Report</button>
-          </Link>
-          <Link to="/">
-            <button className="btn-create">Create a Report</button>
-          </Link> */}
-            <button className="btn create">Create a Report</button>
-          </div>
-        </div>
+      <div className="checkReport">
+        <TopHeader />
 
         {/* Main Contents */}
         <div className="main-container">
@@ -66,18 +40,16 @@ const CheckReport = () => {
               <p className="form-head">Report key*</p>
               <input
                 type="text"
+                value={reportKey}
+                onChange={handleChange}
                 className="input-key"
-                placeholder="letmereport1234"
               />
-              <button className="btn btn-check">Check</button>
+              <button className="btn btn-check" onClick={handleCheckReport}>Check</button>
             </div>
           </div>
         </div>
-        {/* Footer */}
-        <div className="footer">
-          <p className="footer-text">SPEAKTRUTH 2023. ALL RIGHTS RESERVED.</p>
-        </div>
       </div>
+      <Footer />
     </>
   );
 };
