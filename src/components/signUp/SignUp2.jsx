@@ -17,7 +17,7 @@ const SignUp2 = () => {
 
   return (
     <div className="signup-container">
-      <img src={BG_IMG} alt="" className="signup-bg-img" />
+      {/* <img src={BG_IMG} alt="" className="signup-bg-img" /> */}
       <div className="signup-wrapper">
         {/* left */}
         <div className="signup-left">

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // components
 import Home from "./pages/home/Home.jsx";
 import UserReport from "./pages/userReport/UserReport.jsx";
+
 import AdminReport from "./pages/adminReport/AdminReport.jsx"
 import AdminReportDashboard from "./components/adminReportDashboard/AdminReportDashboard.jsx";
 import AdminOverviewDashboard from "./components/adminOverviewDashboard/AdminOverviewDashboard.jsx"
@@ -41,7 +42,7 @@ function App() {
         <Route path="/adminOverviewDashboard" element={<AdminOverviewDashboard />} />
         <Route path="/adminReportDashboard" element={<AdminReportDashboard />} />
         <Route path="/checkReport" element={<CheckReport />} />
-        
+
       </Routes>
     </Router>
     </div>

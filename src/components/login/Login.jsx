@@ -17,7 +17,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <img src={BG_IMG} alt="" className="login-bg-img" />
+      {/* <img src={BG_IMG} alt="" className="login-bg-img" /> */}
       <div className="login-wrapper">
         {/* left */}
         <div className="login-left">
