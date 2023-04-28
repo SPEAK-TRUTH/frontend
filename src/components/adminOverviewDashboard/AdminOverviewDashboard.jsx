@@ -83,7 +83,7 @@ const AdminOverviewDashboard = () => {
           {/* right */}
           <div className="header-right">
             <button className="btn overview">Overview</button>
-            <button className="btn report">Report</button>
+            <button className="btn btn-report">Report</button>
           </div>
         </div>
 

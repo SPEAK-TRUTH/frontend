@@ -1,14 +1,14 @@
 body {
   box-sizing: border-box;
-  position: relative;
+  /* position: relative; */
   padding: 0;
   margin: 0;
   overflow-x: hidden;
 }
 
 .admin-overview-container {
-  min-width: 100vw;
-  min-height: 100vh;
+  /* width: 100%;
+  min-height: 100vh; */
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -56,7 +56,7 @@ body {
   background-color: rgba(39, 162, 219);
 }
 
-.report {
+.btn-report {
   margin-left: 3rem;
   color: rgba(39, 162, 219);
   background: #fff;
@@ -177,7 +177,7 @@ body {
     width: 300px;
   }
 
-  .report {
+  .btn-report {
     margin-left: 1rem;
   }
 
