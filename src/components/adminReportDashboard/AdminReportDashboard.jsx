@@ -43,17 +43,17 @@ const AdminReportDashboard = () => {
 
           {/* right */}
           <div className="header-right">
-            <button className="btn create">Create a Report</button>
-            <button className="btn logout">Logout</button>
+            <button className="btn overview">Overview</button>
+            <button className="btn report">Report</button>
           </div>
         </div>
 
         {/* Side-bar */}
-        <div className="main-container">
-          <div className="side-bar">
+        <div className="admin-report-main-container">
+          {/* <div className="side-bar">
             <div className="bar-item">Overview</div>
             <div className="bar-item pointer">Report</div>
-          </div>
+          </div> */}
 
           {/* Main Contents */}
           <div className="main-wrapper-table">

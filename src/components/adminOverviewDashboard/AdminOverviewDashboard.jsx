@@ -12,6 +12,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import Footer from "../footer/Footer";
 
 const AdminOverviewDashboard = () => {
   ChartJS.register(
@@ -71,7 +72,7 @@ const AdminOverviewDashboard = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="admin-overview-container">
         {/* Header */}
         <div className="topHeaderWrapper">
           {/* left */}
@@ -81,17 +82,17 @@ const AdminOverviewDashboard = () => {
 
           {/* right */}
           <div className="header-right">
-            <button className="btn create">Create a Report</button>
-            <button className="btn logout">Logout</button>
+            <button className="btn overview">Overview</button>
+            <button className="btn report">Report</button>
           </div>
         </div>
 
         {/* Side-bar */}
-        <div className="main-container">
-          <div className="side-bar">
+        <div className="admin-overview-main-container">
+          {/* <div className="side-bar">
             <div className="bar-item pointer">Overview</div>
             <div className="bar-item">Report</div>
-          </div>
+          </div> */}
 
           {/* Main Contents */}
           <div className="main-wrapper">
@@ -139,9 +140,10 @@ const AdminOverviewDashboard = () => {
         </div>
 
         {/* Footer */}
-        <div className="footer">
+        {/* <div className="footer">
           <p className="footer-text">SPEAKTRUTH 2023. ALL RIGHTS RESERVED.</p>
-        </div>
+        </div> */}
+        <Footer />
       </div>
     </>
   );

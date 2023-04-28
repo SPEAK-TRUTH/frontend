@@ -47,18 +47,18 @@ body {
   cursor: pointer;
 }
 
-.create {
+.overview {
   color: #fff;
   background-color: rgba(39, 162, 219);
 }
 
-.logout {
+.report {
   margin-left: 3rem;
   color: rgba(39, 162, 219);
   background: #fff;
 }
 
-.main-container {
+.admin-report-main-container {
   display: flex;
   justify-content: space-between;
   padding: 1rem 3rem;
@@ -184,7 +184,7 @@ tr {
     width: 250px;
   }
 
-  .main-container {
+  .admin-report-main-container {
     padding: 0 1rem;
   }
 
@@ -206,13 +206,13 @@ tr {
     width: 300px;
   }
 
-  .logout {
+  .report {
     margin-left: 1rem;
   }
 
-  .main-container {
+  /* .admin-report-main-container {
     padding: 1rem 3rem;
-  }
+  } */
 
   .main-wrapper-table {
     justify-content: center;

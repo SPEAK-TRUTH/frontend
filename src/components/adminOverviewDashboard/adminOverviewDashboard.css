@@ -6,7 +6,7 @@ body {
   overflow-x: hidden;
 }
 
-.container {
+.admin-overview-container {
   min-width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -33,6 +33,11 @@ body {
   padding: 20px 0;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   height: auto;
   width: 100%;
@@ -46,20 +51,21 @@ body {
   border-radius: 0.3rem;
 }
 
-.create {
+.overview {
   color: #fff;
   background-color: rgba(39, 162, 219);
 }
 
-.logout {
+.report {
   margin-left: 3rem;
   color: rgba(39, 162, 219);
+  background: #fff;
 }
 
-.main-container {
+.admin-overview-main-container {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 3rem;
+  /* padding: 1rem 3rem; */
 }
 
 /* side-bar */
@@ -89,12 +95,14 @@ body {
   align-items: center;
   gap: 7rem;
   margin: 0 auto;
+  margin-bottom: 2rem;
+
 }
 
 .inner-wrapper {
   background: #fff;
   box-shadow: 0 0 5px 5px rgba(217, 217, 217, 0.3) inset;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 3rem;
   margin: 5px;
   width: 400px;
 }
@@ -147,7 +155,7 @@ body {
     width: 250px;
   }
 
-  .main-container {
+  .admin-overview-main-container {
     padding: 0 1rem;
   }
 
@@ -169,11 +177,11 @@ body {
     width: 300px;
   }
 
-  .logout {
+  .report {
     margin-left: 1rem;
   }
 
-  .main-container {
+  .admin-overview-main-container {
     padding: 1rem 3rem;
   }
 
