@@ -36,12 +36,9 @@ const Home = () => {
             <h3>Leading whistleblowing software with expert implementation support.</h3>
           </div>
           <div className="homeHeaderLinkWrapper">
-            {/* <Link to='/' className="homeHeader_link">
+            <Link to='/reportForm' className="homeHeader_link">
                 <span className='homeHeaderlink'>Report</span>
-            </Link> */}
-            <a href="#" className="homeHeader_link">
-              <span className='homeHeaderlink'>Report</span>
-            </a>
+            </Link>
           </div>
           
         </div>

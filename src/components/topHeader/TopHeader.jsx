@@ -17,7 +17,7 @@ import Sidebar from "../sidebar/Sidebar";
 
 const TopHeader = () => {
   //it is just temp
-  const user = true;
+  const user = false;
 
   const showSettings = (event) => {
     event.preventDefault();
@@ -42,6 +42,15 @@ const TopHeader = () => {
     };
   });
 
+  const onClickAbout = () => {
+    window.location.href = "#about";
+  };
+
+  const onClickFAQ = () => {
+    window.location.href = "#faq";
+  };
+
+
 
   return (
     <div className='topHeaderWrapper'>
@@ -56,26 +65,26 @@ const TopHeader = () => {
       
         <div className='topHeaderlinks'  >
           {user ? <>
-                      <a href="#" className="topHeader_link">
-                        <span className='topHeaderReport_link'>Check a Report</span>
-                      </a>
-                      <a href="#" className="topHeader_link">
-                        <span className='topHeaderReport_link'>Create a Report</span>
-                      </a>
+                    <Link to='#' className="topHeader_link">
+                      <span className='topHeaderReport_link'>Overview</span>
+                    </Link>
+                    <Link to='#' className="topHeader_link">
+                      <span className='topHeaderReport_link'>Dashboard</span>
+                    </Link>
                   </>
                 : <>
-                    <a href="#" className="topHeader_link">
+                    <Link onClick={onClickAbout} className="topHeader_link">
                       <span className='topHeaderAbout_link'>About</span>
-                    </a>
-                    <a href="#" className="topHeader_link">
+                    </Link>
+                    <Link onClick={onClickFAQ} className="topHeader_link">
                       <span className='topHeaderFaq_link'>FAQ</span>
-                    </a>
-                    <a href="#" className="topHeader_link">
+                    </Link>
+                    <Link o='#' className="topHeader_link">
                       <span className='topHeaderPrivacy_link'>Privacy </span>
-                    </a>
-                    <a href="#" className="topHeader_link">
+                    </Link>
+                    <Link to='/reportForm' className="topHeader_link">
                       <span className='topHeaderReport_link'>Report</span>
-                    </a>
+                    </Link>
                   </>
           }
         </div>

@@ -5,7 +5,7 @@ import "./FAQ.css"
 import AccordionMenu from '../../components/accordionMenu/accordionMenu'
 const FAQ = () => {
   return (
-    <div className="faq">
+    <div className="faq" id="faq">
         <div className="faqHeader">
             <h1>FAQs About <span>SPEAKTRUTH</span></h1>
         </div>

@@ -1,29 +1,34 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
 .login-container {
-  width: 100vw;
-  height: 100vh;
-  background: #fff;
+  width: 100%;
+  min-height: 100vh;
+  background: url('../../assets/images/listen-gfd3aad7e6_1920.jpeg') center / cover;
   margin: 0;
   padding: 0;
   position: relative;
 }
 
-.login-bg-img {
+/* .login-bg-img {
   object-fit: cover;
   width: 100vw;
   height: 100vh;
-}
+} */
 
 .login-wrapper {
   display: flex;
-  width: 100vw;
+  width: 70%;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  padding: 0 1.5rem;
+  /* padding: 0 1.5rem; */
   margin: 0 auto;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 20%;
 }
 
 /* left */
@@ -147,7 +152,7 @@
 
 @media (min-width: 640px) {
   .login-right {
-    padding: 2.25rem 0;
+    padding: 0;
     background: #d9d9d9;
   }
 
