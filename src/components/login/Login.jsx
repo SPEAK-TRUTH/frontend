@@ -1,97 +1,53 @@
-import React from "react";
+import { useState } from "react";
 import './login.css';
 import LOGO from "../../assets/images/speaktruth-low-resolution-logo-white-on-transparent-background.png";
 import BG_IMG from "../../assets/images/listen-gfd3aad7e6_1920.jpeg";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { isValid, errors, isDirty },
-  } = useForm({
-    defaultValues: { username: "", password: "" },
-    mode: "onChange",
-  });
-  const onSubmit = (data) => console.log(data);
+  
+  const [error, setError] = useState(false);
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    setError(false);
+  };
 
   return (
-    <div className="login-container">
-      {/* <img src={BG_IMG} alt="" className="login-bg-img" /> */}
-      <div className="login-wrapper">
-        {/* left */}
-        <div className="login-left">
-          <img
-            src={LOGO}
-            alt="logo"
-            className="left-img"
-          />
+    <div className="login">
+      <div className="login-form-container">
+
+        {/* box1 */}
+        <div className="login-form-logo-wrapper">
+          <img src={LOGO} alt="" />
         </div>
-        {/* right */}
-        <div className="login-right">
-          <img
-            src={LOGO}
-            alt="logo"
-            className="right-logo"
-          />
-          <div className="login-right-container">
-            <div className="login-right-wrapper">
-              <p className="text-welcome">Welcome to SPEAKTRUTH</p>
-              <h3 className="text-login">Login</h3>
-              {/* Form */}
-              <div className="login-form">
-              <div className="form-item" onSubmit={handleSubmit(onSubmit)}>
-                  <label className="form-item-title" htmlFor="username">Username</label>
-                  <input
-                    type="text"
-                    id="username"
-                    className="form-input"
-                    {...register("username", {
-                      required: {
-                        value: true,
-                        message: "Please enter a valid username.",
-                      },
-                      minLength: {
-                        value: 2,
-                        message: "Username should be at least 2 characters.",
-                      },
-                    })}
-                  />
-                  <p className="form-err">{errors.username?.message}</p>
-                </div>
 
-                <div className="form-item">
-                  <label className="form-item-title" htmlFor="password">Password</label>
-                  <input
-                    type="password"
-                    id="password"
-                    className="form-input"
-                    {...register("password", {
-                      required: {
-                        value: true,
-                        message: "Please enter a valid password.",
-                      },
-                      minLength: {
-                        value: 6,
-                        message: "Password should be at least 6 characters or numbers.",
-                      },
-                    })}
-                  />
-                  <p className="form-err">{errors.password?.message}</p>
-                </div>
-
-                {/* <button type="submit" className="login-btn" disabled={!isDirty}> */}
-                <button className="login-btn">
+        {/* box2 */}
+        <div className="login-form-wrapper">
+          <div className="login-form-panel-wraper">
+            <div className="login-form-panel">
+              <h3>Welcome to SPEAKTRUTH</h3>
+              <h1>Login into your account</h1>
+              <form className="login-form" onSubmit={submitHandler}>
+                <label>Username</label>
+                <input
+                  type="text"
+                  className="loginInput"
+                  required={true}
+                />
+                <label>Password</label>
+                <input
+                  type="password"
+                  className="loginInput"
+                  required={true}
+                />
+                <button className="login-form-submit-button" type="submit">
                   Login
                 </button>
-                <p className="text-msg">
-                  You don't have an account? {""}
-                  <a href="" className="signup-link">
-                    Sign Up
-                  </a>
-                </p>
-              </div>
+              </form>
+              {error && <span style={{color: "red", marginTop: "5px"}}>Username and password do not match.</span>  }
             </div>
+            
           </div>
         </div>
       </div>
