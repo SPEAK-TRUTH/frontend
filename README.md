@@ -13,7 +13,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/naoto-tokoyoda/program-project-front-end.git
+$ git clone https://github.com/SPEAK-TRUTH/frontend.git
 
 # Go into the repository
 $ cd program-project-front-end
