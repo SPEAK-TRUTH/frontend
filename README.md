@@ -15,9 +15,6 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 # Clone this repository
 $ git clone https://github.com/SPEAK-TRUTH/frontend.git
 
-# Go into the repository
-$ cd program-project-front-end
-
 # Install dependencies
 $ yarn
 
