@@ -1,8 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import './login.css';
-import LOGO from "../../assets/images/speaktruth-low-resolution-logo-white-on-transparent-background.png";
-import BG_IMG from "../../assets/images/listen-gfd3aad7e6_1920.jpeg";
-import { useForm } from "react-hook-form";
+import SpeakTruthLogo from "../../assets/images/speaktruth-high-resolution-logo-color-on-transparent-background.png";
 
 const Login = () => {
   
@@ -16,17 +15,16 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login-form-container">
-
+  
         {/* box1 */}
         <div className="login-form-logo-wrapper">
-          <img src={LOGO} alt="" />
+          <img src={SpeakTruthLogo} alt="" />
         </div>
-
+  
         {/* box2 */}
         <div className="login-form-wrapper">
           <div className="login-form-panel-wraper">
             <div className="login-form-panel">
-              <h3>Welcome to SPEAKTRUTH</h3>
               <h1>Login into your account</h1>
               <form className="login-form" onSubmit={submitHandler}>
                 <label>Username</label>
@@ -46,6 +44,12 @@ const Login = () => {
                 </button>
               </form>
               {error && <span style={{color: "red", marginTop: "5px"}}>Username and password do not match.</span>  }
+  
+              {/* Sign up */}
+              <div style={{marginTop: "15px", textAlign: "center"}}>
+                <span style={{fontSize: "14px", color: "#4B5563"}}>Don’t have an account yet?</span>
+                <Link to="/signup" style={{color: "#2563EB", marginLeft: "5px", textDecoration: "none"}}>Sign up</Link>
+              </div>
             </div>
             
           </div>
@@ -53,6 +57,7 @@ const Login = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Login;

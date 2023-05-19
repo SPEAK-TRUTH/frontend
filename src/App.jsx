@@ -13,11 +13,11 @@ import Confirmation from "./components/confirmation/Confirmation.jsx"
 import ReportForm from "./pages/reportForm/ReportForm.jsx";
 
 import Login from "./components/login/Login.jsx"
-import SignUp2 from "./components/signUp/SignUp2.jsx"
-
+import Signup from "./components/signUp/SignUp.jsx";
 
 // css
 import "./App.css"
+
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
 
         {/* admin authentication */}
         <Route path="/login" element={<Login />} />
-        <Route path="/signUp" element={<SignUp2 />} />
+        <Route path="/signup" element={<Signup />} />
 
         {/* repoter */}
         <Route path="/reportForm" element={<ReportForm />} />

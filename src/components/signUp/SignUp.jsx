@@ -1,46 +1,71 @@
-import React from "react";
-import LOGO from "../../assets/images/speaktruth-low-resolution-logo-white-on-transparent-background.png";
-import BG_IMG from "../../assets/images/listen-gfd3aad7e6_1920.jpeg";
-import FormItem from "../formItem/FormItem";
-import './signUp.css';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import './signup.css';
+import SpeakTruthLogo from "../../assets/images/speaktruth-high-resolution-logo-color-on-transparent-background.png";
 
-const SignUp = () => {
+
+const Signup = () => {
+  
+  const [error, setError] = useState(false);
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    setError(false);
+    // Add code here to handle sign up
+  };
+
   return (
-    <div className="signup-container">
-      <img src={BG_IMG} alt="" className="signup-bg-img" />
-      <div className="signup-wrapper">
-        {/* left */}
-        <div className="signup-left">
-          <img src={LOGO} alt="logo" className="left-img" />
+    <div className="signup">
+      <div className="signup-form-container">
+  
+        {/* box1 */}
+        <div className="signup-form-logo-wrapper">
+          <img src={SpeakTruthLogo} alt="" />
         </div>
-        {/* right */}
-        <div className="signup-right">
-          <img src={LOGO} alt="logo" className="right-logo" />
-          <div className="signup-right-container">
-            <div className="signup-right-wrapper">
-              <p className="text-welcome">Welcome to SPEAKTRUTH</p>
-              <h3 className="text-signup">Sign Up</h3>
-              {/* Form */}
-              <div className="signup-form">
-                {/* <FormItem/> */}
-                <FormItem item={"Username"} />
-                <FormItem item={"Email"} />
-                <FormItem item={"Password"} />
-
-                <button className="signup-btn">SignUp</button>
-                <p className="signup-text-msg">
-                  You already have an account? {""}
-                  <a href="" className="login-link">
-                    Login
-                  </a>
-                </p>
+  
+        {/* box2 */}
+        <div className="signup-form-wrapper">
+          <div className="signup-form-panel-wraper">
+            <div className="signup-form-panel">
+              <h1>Create a new account</h1>
+              <form className="signup-form" onSubmit={submitHandler}>
+                <label>Email</label>
+                <input
+                  type="email"
+                  className="signupInput"
+                  required={true}
+                />
+                <label>Username</label>
+                <input
+                  type="text"
+                  className="signupInput"
+                  required={true}
+                />
+                <label>Password</label>
+                <input
+                  type="password"
+                  className="signupInput"
+                  required={true}
+                />
+                <button className="signup-form-submit-button" type="submit">
+                  Sign Up
+                </button>
+              </form>
+              {error && <span style={{color: "red", marginTop: "5px"}}>Something went wrong. Please try again.</span>  }
+  
+              {/* login */}
+              <div style={{marginTop: "15px", textAlign: "center"}}>
+                <span style={{fontSize: "14px", color: "#4B5563"}}>Already have an account?</span>
+                <Link to="/login" style={{color: "#2563EB", marginLeft: "5px", textDecoration: "none"}}>Log in</Link>
               </div>
             </div>
+            
           </div>
         </div>
       </div>
     </div>
   );
+  
 };
 
-export default SignUp;
+export default Signup;
