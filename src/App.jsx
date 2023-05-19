@@ -12,8 +12,8 @@ import CheckReport from "./components/checkReport/CheckReport.jsx"
 import Confirmation from "./components/confirmation/Confirmation.jsx"
 import ReportForm from "./pages/reportForm/ReportForm.jsx";
 
-import Login from "./components/login/Login.jsx"
-import Signup from "./components/signup/Signup.jsx"
+import Login from "./pages/login/Login.jsx"
+import Signup from "./pages/signup/Signup.jsx"
 
 // css
 import "./App.css"
