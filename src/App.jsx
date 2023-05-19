@@ -13,7 +13,7 @@ import Confirmation from "./components/confirmation/Confirmation.jsx"
 import ReportForm from "./pages/reportForm/ReportForm.jsx";
 
 import Login from "./components/login/Login.jsx"
-import Signup from "./components/signUp/SignUp.jsx";
+import Signup from "./components/signup/Signup.jsx";
 
 // css
 import "./App.css"
