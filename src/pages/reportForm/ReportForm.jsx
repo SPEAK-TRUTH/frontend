@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import TopHeader from "../../components/topHeader/TopHeader";
 import Footer from "../../components/footer/Footer";
 import "./reportForm.css"
+import Cloud from "../../assets/reportForm/cloud.svg"
 
 const ReportForm = () => {
   const [reportData, setReportData] = useState({
@@ -222,6 +223,7 @@ const ReportForm = () => {
                 onChange={handleChange}
                 required
                 rows="6"
+                style={{ resize: "vertical" }}
               />
               </div>
           </div>
@@ -248,6 +250,7 @@ const ReportForm = () => {
                   style={{ display: "none" }}
                 />
                 <div className="dropzoneIndication">
+                  <img src={Cloud} alt="" />
                   <p>Click anywhere dropzone to select files</p>
                   <p>or</p>
                   <p>Drag and drop files here.</p>
