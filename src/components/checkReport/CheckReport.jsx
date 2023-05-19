@@ -24,34 +24,42 @@ const CheckReport = () => {
     <>
       <div className="checkReport">
         <TopHeader />
-
-        {/* Main Contents */}
-        <div className="main-container">
-          <div className="wrapper">
-            <div className="top-wrapper">
-              <p className="headline">Check a Report</p>
-              <p className="text">
-                Check the report to see the status and to communicate
-                anonymously with the person from your organization that is
-                handling your report.
+  
+        <div className="checkReport-main-container">
+          <div className="checkReport-wrapper">
+            <div className="checkReport-top-wrapper">
+              <p className="checkReport-headline">Check a Report</p>
+              <p className="checkReport-text">
+                Check the report to see the status and to communicate anonymously
+                with the person from your organization that is handling your
+                report.
               </p>
             </div>
-            <div className="report-form">
-              <p className="form-head">Report key*</p>
+            <div className="checkReport-report-form">
+              <p className="checkReport-form-headline">Report Key*</p>
               <input
                 type="text"
                 value={reportKey}
                 onChange={handleChange}
-                className="input-key"
+                className="checkReport-input-key"
               />
-              <button className="btn btn-check" onClick={handleCheckReport}>Check</button>
+              <div className="checkReport-button-wrapper">
+                <button className="checkReport-btn checkReport-btn-check" onClick={handleCheckReport}>
+                  Check
+                </button>
+              </div>
+              
             </div>
           </div>
         </div>
       </div>
+      <div className="check-report-footer">
       <Footer />
+      </div>
+      
     </>
   );
+  
 };
 
 export default CheckReport;
