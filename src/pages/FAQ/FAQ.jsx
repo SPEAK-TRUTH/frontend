@@ -2,7 +2,7 @@ import React from 'react'
 
 
 import "./faq.css"
-import AccordionMenu from '../../components/accordionMenu/accordionMenu.jsx'
+import AccordionMenu from "../../components/accordionMenu/AccordionMenu.jsx"
 const FAQ = () => {
   return (
     <div className="faq" id="faq">
