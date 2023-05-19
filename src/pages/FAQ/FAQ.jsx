@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-import "./FAQ.css"
+import "./faq.css"
 import AccordionMenu from '../../components/accordionMenu/accordionMenu'
 const FAQ = () => {
   return (
