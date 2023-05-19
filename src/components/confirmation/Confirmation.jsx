@@ -37,37 +37,35 @@ const Confirmation = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="confirmation-container">
         <TopHeader />
-        {/* Main Contents */}
-        <div className="main-container">
-          <div className="wrapper">
-            <div className="top-wrapper">
-              <p className="headline">Thank you for your help!</p>
-              <p className="text">
-                We received the report in order. We will investigate it as soon
-                as possible and respond to you.
+        <div className="confirmation-main-container">
+          <div className="confirmation-wrapper">
+            <div className="confirmation-top-wrapper">
+              <p className="confirmation-headline">Thank you for your help!</p>
+              <p className="confirmation-message">
+                We received the report in order.
+              </p>
+              <p className="confirmation-message">
+                We will investigate it as soon as possible and respond to you.
               </p>
             </div>
-            <div className="blue-container">
-              {/* logo */}
-              <BsShieldFillExclamation className="icon" />
-              <p className="text inner-text">
+            <div className="confirmation-blue-container">
+              <BsShieldFillExclamation className="confirmation-icon" />
+              <p className="confirmation-message">
                 Download or copy and safely store this key. Without it, you
                 won't be able to check the report and communicate further with
-                your organization
+                your organization.
               </p>
-              <div className="white-box">{reportKey}</div>
-
-              <div className="btnWrapper">
-              <button className="btn-copy" onClick={handleCopy}>
-                {copyButtonText}
-              </button>
-              <button className="btn-copy" onClick={goToCheckReport}>
-                Check Report
-              </button>
+              <div className="confirmation-white-box">{reportKey}</div>
+              <div className="confirmation-button-wrapper">
+                <button className="confirmation-copy-button" onClick={handleCopy}>
+                  {copyButtonText}
+                </button>
+                <button className="confirmation-check-report-button" onClick={goToCheckReport}>
+                  Check Report
+                </button>
               </div>
-              
             </div>
           </div>
         </div>

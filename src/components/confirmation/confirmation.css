@@ -1,17 +1,16 @@
-.container {
-  width:95%;
+.confirmation-container {
+  width: 95%;
   margin: 0px auto 150px auto;
   font-family: 'Open Sans';
 }
 
-/* Main Container */
-.main-container {
+.confirmation-main-container {
   text-align: center;
-  width: 100vh;
+  width: 75%;
   margin: 0 auto;
 }
 
-.wrapper {
+.confirmation-wrapper {
   width: 100%;
   margin: 3rem auto;
   display: flex;
@@ -19,125 +18,124 @@
   gap: 2rem;
 }
 
-.headline {
+.confirmation-headline {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
 }
 
-.text {
+.confirmation-message {
   font-size: 1.3rem;
 }
 
-.blue-container {
+.confirmation-blue-container {
   background: rgba(39, 162, 219, 0.1);
   border-radius: 1rem;
-  padding: 3rem 3rem 3rem 3rem;
+  padding: 3rem;
   border: 1px solid #000;
-  /* width: 90%; */
   margin: 0 auto;
 }
 
-.icon {
+.confirmation-icon {
   width: 100%;
   font-size: 3rem;
   margin-top: 1rem;
 }
 
-.white-box {
-  width:50%;
+.confirmation-white-box {
+  width: 90%;
   background: #fff;
   padding: 1rem 0;
-  margin-bottom:50px;
   border-radius: 0.3rem;
-
-  display:flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin:0 auto;
+  margin:30px auto;
 }
 
-.inner-text {
+.confirmation-inner-text {
   margin: 1rem 0 2rem 0;
   width: 100%;
 }
 
-.key {
+.confirmation-key {
   font-weight: 700;
   letter-spacing: 0.1rem;
 }
 
-.btnWrapper{
-  margin-top:50px;
+.confirmation-button-wrapper {
+  margin-top: 50px;
 }
 
-.btn-copy {
+.confirmation-copy-button {
   background: #fff;
   padding: 0.6rem 2rem;
   border-radius: 0.3rem;
   font-weight: 600;
   border: 2px solid rgba(39, 162, 219);
   color: rgba(39, 162, 219);
-
-  margin-right:20px;
+  margin-right: 20px;
 }
 
-
-
-
-
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
-  .header-left {
-    width: 300px;
-  }
-
-  .check {
-    margin-right: 1rem;
-  }
+.confirmation-check-report-button {
+  background: #fff;
+  padding: 0.6rem 2rem;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  border: 2px solid rgba(39, 162, 219);
+  color: rgba(39, 162, 219);
 }
 
-/* Media query for screens smaller than 576px */
+/* Media query for screens smaller than 1100px */
 @media (max-width: 576px) {
-  
-
-  .header-right {
-    display: none;
+  .confirmation-main-container {
+    width: 100%;
   }
 
-  .headline {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .text {
-    font-size: 1rem;
-  }
-
-  .wrapper {
-    width: 90%;
+  .confirmation-blue-container {
+    background: rgba(39, 162, 219, 0.1);
+    border-radius: 1rem;
+    padding: 30px 0px;
+    border: 1px solid #000;
     margin: 0 auto;
-    gap: 1rem;
   }
 
-  .blue-container {
-    padding: 1rem 1rem 0 1rem;
+  .confirmation-white-box {
+    width: 90%;
+    background: #fff;
+    padding: 1rem 0;
+    margin-bottom: 50px;
+    border-radius: 0.3rem;
+    
+    margin:30px auto;
   }
 
-  .icon {
-    font-size: 2rem;
+  .confirmation-button-wrapper {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
   }
-}
 
-/* Media query for screens smaller than 375px */
-@media (max-width: 375px) {
-  .headline {
-    margin-bottom: 0.5rem;
+  .confirmation-copy-button {
+    width: 50%;
+    background: #fff;
+    padding: 0.6rem 2rem;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    border: 2px solid rgba(39, 162, 219);
+    color: rgba(39, 162, 219);
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
-  .key {
-    letter-spacing: normal;
-  }
-  .footer-text {
-    font-size: 0.6rem;
+
+  .confirmation-check-report-button {
+    width: 50%;
+    background: #fff;
+    padding: 0.6rem 2rem;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    border: 2px solid rgba(39, 162, 219);
+    color: rgba(39, 162, 219);
+    margin: 0 auto;
   }
 }
