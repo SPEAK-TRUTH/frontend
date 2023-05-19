@@ -7,16 +7,7 @@
   justify-content: space-between;
 }
 
-/* Header */
-.topHeaderWrapper {
-  width: 90%;
-  height: auto;
-  margin: 0 auto;
-  transition: width 0.5s;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 
 .header-left {
   width: 350px;
@@ -132,9 +123,6 @@
 }
 
 @media (max-width: 425px) {
-  .topHeaderWrapper {
-    justify-content: center;
-  }
   .header-right {
     display: none;
   }

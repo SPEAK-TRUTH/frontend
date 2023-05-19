@@ -1,5 +1,5 @@
 import React from "react";
-import LOGO from "../../assets/topHeaderImages/speaktruthLogo.png";
+import TopHeader from "../topHeader/TopHeader";
 import "./adminReportDashboard.css";
 import { useTable, usePagination, useSortBy } from "react-table";
 import { data, columns } from "./data/tableData";
@@ -35,18 +35,7 @@ const AdminReportDashboard = () => {
     <>
       <div className="admin-report-container">
         {/* Header */}
-        <div className="topHeaderWrapper">
-          {/* left */}
-          <div className="header-left">
-            <img className="logo" src={LOGO} />
-          </div>
-
-          {/* right */}
-          <div className="header-right">
-            <button className="btn overview">Overview</button>
-            <button className="btn btn-report">Report</button>
-          </div>
-        </div>
+        <TopHeader />
 
         {/* Side-bar */}
         <div className="admin-report-main-container">

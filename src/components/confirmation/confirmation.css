@@ -99,9 +99,7 @@
 
 /* Media query for screens smaller than 576px */
 @media (max-width: 576px) {
-  .topHeaderWrapper {
-    justify-content: center;
-  }
+  
 
   .header-right {
     display: none;

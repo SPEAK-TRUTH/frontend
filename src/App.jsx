@@ -33,15 +33,15 @@ function App() {
         <Route path="/signup" element={<Signup />} />
 
         {/* repoter */}
-        <Route path="/reportForm" element={<ReportForm />} />
+        {/* <Route path="/reportForm" element={<ReportForm />} />
         <Route path="/userReport" element={<UserReport />} />
-        <Route path="/confirmation" element={<Confirmation />} />
+        <Route path="/confirmation" element={<Confirmation />} /> */}
 
         {/* admin */}
-        <Route path="/adminReport" element={<AdminReport />} />
+        {/* <Route path="/adminReport" element={<AdminReport />} />
         <Route path="/adminOverviewDashboard" element={<AdminOverviewDashboard />} />
         <Route path="/adminReportDashboard" element={<AdminReportDashboard />} />
-        <Route path="/checkReport" element={<CheckReport />} />
+        <Route path="/checkReport" element={<CheckReport />} /> */}
 
       </Routes>
     </Router>

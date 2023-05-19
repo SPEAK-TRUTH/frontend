@@ -1,5 +1,5 @@
 import React from "react";
-import LOGO from "../../assets/topHeaderImages/speaktruthLogo.png";
+import TopHeader from "../topHeader/TopHeader";
 import "./adminOverviewDashboard.css";
 import { Line } from "react-chartjs-2";
 import {
@@ -74,18 +74,7 @@ const AdminOverviewDashboard = () => {
     <>
       <div className="admin-overview-container">
         {/* Header */}
-        <div className="topHeaderWrapper">
-          {/* left */}
-          <div className="header-left">
-            <img className="logo" src={LOGO} />
-          </div>
-
-          {/* right */}
-          <div className="header-right">
-            <button className="btn overview">Overview</button>
-            <button className="btn btn-report">Report</button>
-          </div>
-        </div>
+       <TopHeader />
 
         {/* Side-bar */}
         <div className="admin-overview-main-container">
@@ -138,11 +127,6 @@ const AdminOverviewDashboard = () => {
             </div>
           </div>
         </div>
-
-        {/* Footer */}
-        {/* <div className="footer">
-          <p className="footer-text">SPEAKTRUTH 2023. ALL RIGHTS RESERVED.</p>
-        </div> */}
         <Footer />
       </div>
     </>

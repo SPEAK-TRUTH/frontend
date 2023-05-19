@@ -1,10 +1,9 @@
 .topHeaderWrapper{
-    width:95%;
+    width:100%;
     height:auto;
 
     display:flex;
     margin:0 auto;
-
     transition: width 0.5s;
 }
 
@@ -79,10 +78,3 @@
     }
 }
 
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
-    .topHeaderWrapper{
-        width:100%;
-    }
-    
-}
