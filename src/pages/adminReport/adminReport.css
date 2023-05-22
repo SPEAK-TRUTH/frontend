@@ -1,111 +1,133 @@
-/* .adminReport{
-    width:100%;
+.adminReport {
+    width:95%;
     margin:0 auto;
     font-family: 'Open Sans';
-
 }
 
-
-.adminReportLinksAndRportWrapper{
-    display:flex;
-    flex-direction: row;
+.adminReport-report {
+    width:95%;
+    margin:50px auto;
 }
 
-.report{
-    width:80%;
-    margin:100px auto 100px auto;
-}
-
-.extensionIcon{
+.adminReport-extensionIcon {
     width:48px;
     height:auto;
 }
 
-.reportID{
+.adminReport-reportID {
+    width:100%;
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
-    line-height: 22px;
-    margin-bottom:100px;
+    line-height: 60px;
+    margin-bottom:50px;
 }
 
-.reportDetailsWrapper{
+.adminReport-reportDetailsWrapper {
     width:100%;
     margin-bottom:100px;
 }
 
-
-.reportDetailsWrapper hr{
+.adminReport-reportDetailsWrapper hr {
     width:100%;
     border: 1px solid #D9D9D9;
 }
 
-.reportDetails{
+.adminReport-reportDetails {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
     margin:50px 0px;
 }
 
-.reportSection{
+.adminReport-reportSection {
     margin-bottom:30px;
 }
 
-.reportSectionName{
+.adminReport-reportSectionName {
     color: rgba(0, 0, 0, 0.5);
     margin-bottom:10px;
 }
 
-.reportSection span{
+.adminReport-reportSection span {
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 22px;
 }
 
-.reportDescription{
+.adminReport-reportDescription {
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
-
     margin-bottom:50px;
 }
 
-.reportFileLists{
+.adminReport-reportFileLists {
     margin-top:20px;
 }
 
-.reportFileList {
+.adminReport-reportFileList {
     width:300px;
     height:auto;
     border: 1px solid #D9D9D9;
     border-radius: 5px;
     padding:5px;
     margin-bottom:10px;
-
     display:flex;
     flex-direction: row;
     align-items: center;
 }
 
-.reportFileList a{
+.adminReport-reportFileList a {
     width:auto;
     height:auto;
     cursor: pointer;
 }
 
-.reportChatHeader h2{
+.adminReport-reportChatHeader h3 {
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
     line-height: 22px;
-    margin:100px 0px;
+    margin:50px 0px;
 }
 
-.reportChatWrapper hr{
+.adminReport-reportChatWrapper hr {
     width:100%;
     border: 1px solid #D9D9D9;
-} */
+}
+
+/* Media query for screens smaller than 1100px */
+@media (max-width: 768px) {
+    .adminReport-report {
+        width:95%;
+        margin:100px auto;
+    }
+
+
+.adminReport-reportID {
+    font-size: 23px;
+    margin-bottom:50px;
+    text-align: center;
+}
+
+    .adminReport-reportDetails {
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin:50px 0px;
+        text-align: center;
+    }
+    .adminReport-reportChatHeader h3 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 23px;
+        line-height: 22px;
+        margin:50px 0px;
+    }
+    
+}

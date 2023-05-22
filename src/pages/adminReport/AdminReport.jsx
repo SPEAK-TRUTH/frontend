@@ -8,7 +8,7 @@ import Footer from "../../components/footer/Footer"
 import Chat from "../../components/chat/Chat";
 import TopHeader from "../../components/topHeader/TopHeader";
 
-// import "./adminReport.css"
+import "./adminReport.css"
 
 // Import icons
 import PdfIcon  from "../../assets/fileIcons/pdf-icon1.png";
@@ -64,11 +64,11 @@ const AdminReport = () => {
 
 
   return (
-    <div className='adminReport-adminReport'>
+    <div className='adminReport'>
         <TopHeader />
             <div className="adminReport-report">
                 <div className="adminReport-reportID">
-                    <h2>Report ID: <span>Letmeseeyourreport123</span> </h2>
+                    <h3>#Letmeseeyourreport123</h3>
                 </div>
                     <div className="adminReport-reportDetailsWrapper">
                         <hr />
@@ -183,7 +183,7 @@ const AdminReport = () => {
                 <div className="adminReport-reportChatWrapper">
                     <hr />
                     <div className="adminReport-reportChatHeader">
-                            <h2>Send Messages </h2>
+                            <h3>Send Messages </h3>
                     </div>
 
                     <div className="adminReport-reportChat">
