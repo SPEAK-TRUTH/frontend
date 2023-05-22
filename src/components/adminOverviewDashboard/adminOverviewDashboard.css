@@ -109,18 +109,7 @@
   border-bottom: 3px solid rgba(39, 162, 219, 0.1);
 }
 
-/* Footer */
-.footer {
-  background: rgba(39, 162, 219, 0.1);
-  width: 100%;
-}
 
-.footer-text {
-  text-align: center;
-  padding: 1rem;
-  font-weight: 600;
-  font-size: 0.8rem;
-}
 
 @media (max-width: 425px) {
   .header-right {
