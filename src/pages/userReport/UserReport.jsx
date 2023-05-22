@@ -65,44 +65,44 @@ const UserReport = () => {
   return (
     <div className='userReport'>
         <TopHeader />
-        <div className="report">
-            <div className="reportID">
-                <h2>Report ID: <span>Letmeseeyourreport123</span> </h2>
+        <div className="userReport-report">
+            <div className="userReport-reportID">
+                <h3>#Letmeseeyourreport123</h3>
             </div>
 
-            <div className="reportDetailsWrapper">
+            <div className="userReport-reportDetailsWrapper">
                 <hr />
-                <div className="reportDetails">
+                <div className="userReport-reportDetails">
                     {/* box1 */}
-                    <div className="reportDepartmentCategory">
+                    <div className="userReport-reportDepartmentCategory">
                         {/* box1 */}
-                        <div className="reportSection">
-                            <h3 className="reportSectionName">Department</h3>
+                        <div className="userReport-reportSection">
+                            <h3 className="userReport-reportSectionName">Department</h3>
                             <span>Marketing</span>
                         </div>
                         {/* box2 */}
-                        <div className="reportSection">
-                            <h3 className="reportSectionName">Category</h3>
+                        <div className="userReport-reportSection">
+                            <h3 className="userReport-reportSectionName">Category</h3>
                             <span>Harassment</span>
                         </div>
                     </div>
 
                     {/* box2 */}
-                    <div className="reportDates">
+                    <div className="userReport-reportDates">
                          {/* box1 */}
-                         <div className="reportSection">
-                            <h3 className="reportSectionName">Submitted at </h3>
+                         <div className="userReport-reportSection">
+                            <h3 className="userReport-reportSectionName">Submitted at </h3>
                             <span>March 3, 2023 05:00 PM</span>
                         </div>
                         {/* box2 */}
-                        <div className="reportSection">
-                            <h3 className="reportSectionName">Incident Date</h3>
+                        <div className="userReport-reportSection">
+                            <h3 className="userReport-reportSectionName">Incident Date</h3>
                             <span>March 3, 2023 05:00 PM</span>
                         </div>
                     </div>
                 </div>
 
-                <div className="reportDescription">
+                <div className="userReport-reportDescription">
                 {/* {
                     (() => {
                         const sanitizedContent = DOMPurify.sanitize(report.content);
@@ -115,15 +115,15 @@ const UserReport = () => {
                     </p>
                 </div>
 
-                <div className="reportAttachment">
-                    <h3 className="reportSectionName">Attachment</h3>
-                    <ul className="reportFileLists">
+                <div className="userReport-reportAttachment">
+                    <h3 className="userReport-reportSectionName">Attachment</h3>
+                    <ul className="userReport-reportFileLists">
                     {/* {report.files.map((file, index) => (
-                        <li key={index} className="flex items-center mb-2">
+                        <li key={index} className="userReport-flex items-center mb-2">
                         {getIconForFileType(file.filename)}
                         <a
                             href={`http://localhost:5002/files/${file.filename}`}
-                            className="text-blue-500 hover:underline"
+                            className="userReport-text-blue-500 hover:underline"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -131,9 +131,9 @@ const UserReport = () => {
                         </a>
                         </li>
                     ))} */}
-                        <li  className="reportFileList">
+                        <li  className="userReport-reportFileList">
                             {/* {getIconForFileType(file.filename)} */}
-                            <img src={JpegIcon} alt="JPEG/PNG Icon" className="extensionIcon" />
+                            <img src={JpegIcon} alt="JPEG/PNG Icon" className="userReport-extensionIcon" />
                             <a
                                 // href={`http://localhost:5002/files/${file.filename}`}
                                 target="_blank"
@@ -145,9 +145,9 @@ const UserReport = () => {
                             </a>
                         </li>
 
-                        <li  className="reportFileList">
+                        <li  className="userReport-reportFileList">
                             {/* {getIconForFileType(file.filename)} */}
-                            <img src={JpegIcon} alt="JPEG/PNG Icon" className="extensionIcon" />
+                            <img src={JpegIcon} alt="JPEG/PNG Icon" className="userReport-extensionIcon" />
                             <a
                                 // href={`http://localhost:5002/files/${file.filename}`}
                                 target="_blank"
@@ -159,9 +159,9 @@ const UserReport = () => {
                             </a>
                         </li>
 
-                        <li  className="reportFileList">
+                        <li  className="userReport-reportFileList">
                             {/* {getIconForFileType(file.filename)} */}
-                            <img src={JpegIcon} alt="JPEG/PNG Icon" className="extensionIcon" />
+                            <img src={JpegIcon} alt="JPEG/PNG Icon" className="userReport-extensionIcon" />
                             <a
                                 // href={`http://localhost:5002/files/${file.filename}`}
                                 target="_blank"
@@ -176,18 +176,20 @@ const UserReport = () => {
                 </div>
             </div>
 
-            <div className="reportChatWrapper">
+            <div className="userReport-reportChatWrapper">
                 <hr />
-                <div className="reportChatHeader">
-                        <h2>Send Messages </h2>
+                <div className="userReport-reportChatHeader">
+                        <h3>Send Messages </h3>
                 </div>
 
-                <div className="reportChat">
+                <div className="userReport-reportChat">
                     <Chat />
                 </div>
             </div>
         </div>
-    <Footer />
+        <div className="userReport-footer">
+         <Footer />
+      </div>
     </div>
   )
 }

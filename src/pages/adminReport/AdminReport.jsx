@@ -8,7 +8,7 @@ import Footer from "../../components/footer/Footer"
 import Chat from "../../components/chat/Chat";
 import TopHeader from "../../components/topHeader/TopHeader";
 
-import "./adminReport.css"
+// import "./adminReport.css"
 
 // Import icons
 import PdfIcon  from "../../assets/fileIcons/pdf-icon1.png";
@@ -64,45 +64,45 @@ const AdminReport = () => {
 
 
   return (
-    <div className='adminReport'>
+    <div className='adminReport-adminReport'>
         <TopHeader />
-            <div className="report">
-                <div className="reportID">
+            <div className="adminReport-report">
+                <div className="adminReport-reportID">
                     <h2>Report ID: <span>Letmeseeyourreport123</span> </h2>
                 </div>
-                    <div className="reportDetailsWrapper">
+                    <div className="adminReport-reportDetailsWrapper">
                         <hr />
-                        <div className="reportDetails">
+                        <div className="adminReport-reportDetails">
                             {/* box1 */}
-                            <div className="reportDepartmentCategory">
+                            <div className="adminReport-reportDepartmentCategory">
                                 {/* box1 */}
-                                <div className="reportSection">
-                                    <h3 className="reportSectionName">Department</h3>
+                                <div className="adminReport-reportSection">
+                                    <h3 className="adminReport-reportSectionName">Department</h3>
                                     <span>Marketing</span>
                                 </div>
                                 {/* box2 */}
-                                <div className="reportSection">
-                                    <h3 className="reportSectionName">Category</h3>
+                                <div className="adminReport-reportSection">
+                                    <h3 className="adminReport-reportSectionName">Category</h3>
                                     <span>Harassment</span>
                                 </div>
                             </div>
 
                             {/* box2 */}
-                            <div className="reportDates">
+                            <div className="adminReport-reportDates">
                                 {/* box1 */}
-                                <div className="reportSection">
-                                    <h3 className="reportSectionName">Submitted at </h3>
+                                <div className="adminReport-reportSection">
+                                    <h3 className="adminReport-reportSectionName">Submitted at </h3>
                                     <span>March 3, 2023 05:00 PM</span>
                                 </div>
                                 {/* box2 */}
-                                <div className="reportSection">
-                                    <h3 className="reportSectionName">Incident Date</h3>
+                                <div className="adminReport-reportSection">
+                                    <h3 className="adminReport-reportSectionName">Incident Date</h3>
                                     <span>March 3, 2023 05:00 PM</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="reportDescription">
+                        <div className="adminReport-reportDescription">
                         {/* {
                             (() => {
                                 const sanitizedContent = DOMPurify.sanitize(report.content);
@@ -115,16 +115,16 @@ const AdminReport = () => {
                             </p>
                         </div>
 
-                        <div className="reportAttachment">
-                            <h3 className="reportSectionName">Attachment</h3>
-                            <ul className="reportFileLists">
+                        <div className="adminReport-reportAttachment">
+                            <h3 className="adminReport-reportSectionName">Attachment</h3>
+                            <ul className="adminReport-reportFileLists">
                                 {/* {
                                     report.files.map((file, index) => (
-                                    <li key={index} className="flex items-center mb-2">
+                                    <li key={index} className="adminReport-flex items-center mb-2">
                                         {getIconForFileType(file.filename)}
                                         <a
                                             href={`http://localhost:5002/files/${file.filename}`}
-                                            className="text-blue-500 hover:underline"
+                                            className="adminReport-text-blue-500 hover:underline"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
@@ -133,9 +133,9 @@ const AdminReport = () => {
                                     </li>
                                     ))
                                 } */}
-                                <li  className="reportFileList">
+                                <li  className="adminReport-reportFileList">
                                     {/* {getIconForFileType(file.filename)} */}
-                                    <img src={JpegIcon} alt="JPEG/PNG Icon" className="extensionIcon" />
+                                    <img src={JpegIcon} alt="JPEG/PNG Icon" className="adminReport-extensionIcon" />
                                     <a
                                         // href={`http://localhost:5002/files/${file.filename}`}
                                         target="_blank"
@@ -147,9 +147,9 @@ const AdminReport = () => {
                                     </a>
                                 </li>
 
-                                <li  className="reportFileList">
+                                <li  className="adminReport-reportFileList">
                                     {/* {getIconForFileType(file.filename)} */}
-                                    <img src={JpegIcon} alt="JPEG/PNG Icon" className="extensionIcon" />
+                                    <img src={JpegIcon} alt="JPEG/PNG Icon" className="adminReport-extensionIcon" />
                                     <a
                                         // href={`http://localhost:5002/files/${file.filename}`}
                                         target="_blank"
@@ -161,9 +161,9 @@ const AdminReport = () => {
                                     </a>
                                 </li>
 
-                                <li  className="reportFileList">
+                                <li  className="adminReport-reportFileList">
                                     {/* {getIconForFileType(file.filename)} */}
-                                    <img src={JpegIcon} alt="JPEG/PNG Icon" className="extensionIcon" />
+                                    <img src={JpegIcon} alt="JPEG/PNG Icon" className="adminReport-extensionIcon" />
                                     <a
                                         // href={`http://localhost:5002/files/${file.filename}`}
                                         target="_blank"
@@ -180,13 +180,13 @@ const AdminReport = () => {
 
                 
 
-                <div className="reportChatWrapper">
+                <div className="adminReport-reportChatWrapper">
                     <hr />
-                    <div className="reportChatHeader">
+                    <div className="adminReport-reportChatHeader">
                             <h2>Send Messages </h2>
                     </div>
 
-                    <div className="reportChat">
+                    <div className="adminReport-reportChat">
                         <Chat />
                     </div>
                 </div>

@@ -54,7 +54,7 @@ const CheckReport = () => {
         </div>
       </div>
       <div className="check-report-footer">
-      <Footer />
+        <Footer />
       </div>
       
     </>
