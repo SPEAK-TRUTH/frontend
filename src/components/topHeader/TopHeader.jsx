@@ -57,7 +57,7 @@ const TopHeader = () => {
       {/* {windowSize < largeScreen ? (<Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />) : <></>} */}
       {/* box1 */}
       <div className="topHeaderSpeakTruthLogoWrapper">
-        {windowSize < largeScreen ? <img className='topHeaderSpeakTruthLogo' src={SpeakTruthLogo} /> : <img className='topHeaderSpeakTruthFullLogo' src={SpeakTruthFullLogo} />}
+        {windowSize < largeScreen ? <Link to='/'> <img className='topHeaderSpeakTruthLogo' src={SpeakTruthLogo} /></Link> :<Link to='/'> <img className='topHeaderSpeakTruthFullLogo' src={SpeakTruthFullLogo} /></Link>}
         
       </div>
       
