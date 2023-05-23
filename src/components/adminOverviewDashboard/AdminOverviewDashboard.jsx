@@ -57,14 +57,14 @@ const AdminOverviewDashboard = () => {
   ];
 
   const department = departmentArr.map((item) => (
-    <div key={item.department} className="item">
+    <div key={item.department} className="adminOverViewDashboard-item">
       <p>{item.department}</p>
       <p>{item.value}</p>
     </div>
   ));
 
   const category = categoryArr.map((item) => (
-    <div key={item.category} className="item">
+    <div key={item.category} className="adminOverViewDashboard-item">
       <p>{item.category}</p>
       <p>{item.value}</p>
     </div>
@@ -72,26 +72,20 @@ const AdminOverviewDashboard = () => {
 
   return (
     <>
-      <div className="admin-overview-container">
+      <div className="adminOverViewDashboard">
         {/* Header */}
        <TopHeader />
 
         {/* Side-bar */}
-        <div className="admin-overview-main-container">
-          {/* <div className="side-bar">
-            <div className="bar-item pointer">Overview</div>
-            <div className="bar-item">Report</div>
-          </div> */}
-
-          {/* Main Contents */}
-          <div className="main-wrapper">
-            {/* Main Content - left */}
-            <div className="left">
-              <div className="content">
-                <div className="wrapper-gray">
-                  <div className="inner-wrapper">
-                    <h3 className="bold">Monthly Reports</h3>
-                    {/* graph */}
+        {/* <div className="adminOverViewDashboard-main-container">
+          <div className="adminOverViewDashboard-main-wrapper">
+            
+            <div className="adminOverViewDashboard-left">
+              <div className="adminOverViewDashboard-content">
+                <div className="adminOverViewDashboard-wrapper-gray">
+                  <div className="adminOverViewDashboard-inner-wrapper">
+                    <h3 className="adminOverViewDashboard-bold">Monthly Reports</h3>
+                    
                     <Line
                       height={400}
                       width={550}
@@ -105,29 +99,64 @@ const AdminOverviewDashboard = () => {
               </div>
             </div>
 
-            {/* Main Content - right */}
-            <div className="right">
-              <div className="content">
-                <div className="wrapper-gray">
-                  <div className="inner-wrapper">
-                    <h3 className="bold">By department</h3>
+            
+            <div className="adminOverViewDashboard-right">
+              <div className="adminOverViewDashboard-content">
+                <div className="adminOverViewDashboard-wrapper-gray">
+                  <div className="adminOverViewDashboard-inner-wrapper">
+                    <h3 className="adminOverViewDashboard-bold">By department</h3>
                     {department}
                   </div>
                 </div>
               </div>
 
-              <div className="content">
-                <div className="wrapper-gray">
-                  <div className="inner-wrapper">
-                    <h3 className="bold">By Category</h3>
+              <div className="adminOverViewDashboard-content">
+                <div className="adminOverViewDashboard-wrapper-gray">
+                  <div className="adminOverViewDashboard-inner-wrapper">
+                    <h3 className="adminOverViewDashboard-bold">By Category</h3>
                     {category}
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+        </div> */}
+
+        <div className="adminOverViewDashboard-main-container">
+          {/* box1 */}
+          <div className="adminOverViewDashboard-monthly-reports-wrapper">
+            <h3>Monthly Reports</h3>
+              <Line
+                height={400}
+                width={550}
+                data={data}
+                options={options}
+                //   data={graphData}
+                //   id="chart-key"
+              />
+          </div>
+
+          {/* box2 */}
+          <div className="adminOverViewDashboard-details">
+            {/* box1 */}
+            <div className="adminOverViewDashboard-details-department">
+              <h3>By department</h3>
+              {department}
+            </div>
+
+            {/* box2 */}
+            <div className="adminOverViewDashboard-details-category">
+              <h3>By category</h3>
+              {category}
+            </div>
+          </div>
         </div>
-        <Footer />
+
+
+        <div className="adminOverViewDashboard-footer">
+          <Footer />
+        </div>
       </div>
     </>
   );

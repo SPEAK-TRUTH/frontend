@@ -1,78 +1,106 @@
-.admin-overview-container {
+.adminOverViewDashboard {
   /* width: 100%;
   min-height: 100vh; */
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  justify-content: space-between;
+  width: 95%;
+  margin:0px auto;
+  
 }
 
-
-
-.header-left {
-  width: 350px;
-  height: auto;
-  transition: width 0.5s;
-  padding: 20px 0;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: auto;
+.adminOverViewDashboard-main-container{
   width: 100%;
-  padding: 10px;
+  height:100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  margin:100px auto;
 }
 
-.btn {
-  border: 1px solid rgba(39, 162, 219);
-  padding: 0.4rem 1rem;
-  font-weight: 600;
-  border-radius: 0.3rem;
-}
-
-.overview {
-  color: #fff;
-  background-color: rgba(39, 162, 219);
-}
-
-.btn-report {
-  margin-left: 3rem;
-  color: rgba(39, 162, 219);
+.adminOverViewDashboard-monthly-reports-wrapper{
+  width:50%;
   background: #fff;
+  box-shadow: 0 0 5px 5px rgba(217, 217, 217, 0.3) inset;
+  padding:10px;
 }
 
-.admin-overview-main-container {
+.adminOverViewDashboard-details{
+  width:50%;
+  height:100%;
+  padding:10px;
+}
+
+
+.adminOverViewDashboard-details-department, .adminOverViewDashboard-details-category{
+  background: #fff;
+  box-shadow: 0 0 5px 5px rgba(217, 217, 217, 0.3) inset;
+  margin:20px;
+  padding:15px;
+  height:100%;
+}
+.adminOverViewDashboard-item {
   display: flex;
   justify-content: space-between;
-  /* padding: 1rem 3rem; */
+  margin: 1.5rem 0;
+  border-bottom: 3px solid rgba(39, 162, 219, 0.1);
 }
 
-/* side-bar */
-.side-bar {
-  width: 150px;
-  font-weight: 600;
-  /* padding-right: 2rem; */
-  border-right: 2px solid rgb(217, 217, 217);
-  box-sizing: border-box;
+
+
+
+
+.adminOverViewDashboard-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
-.bar-item {
-  margin-bottom: 1rem;
-  padding: 0.2rem 0 0.2rem 1rem;
+
+@media (max-width: 768px) {
+  .adminOverViewDashboard-main-container{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    margin:50px auto;
+  }
+
+  .adminOverViewDashboard-monthly-reports-wrapper{
+    width:90%;
+    background: #fff;
+    box-shadow: 0 0 5px 5px rgba(217, 217, 217, 0.3) inset;
+  }
+
+  .adminOverViewDashboard-details{
+    width:90%;
+    height:100%;
+    margin: 10px auto;
+    padding:10px;
+  }
+
+  .adminOverViewDashboard-details-department, .adminOverViewDashboard-details-category{
+    background: #fff;
+    box-shadow: 0 0 5px 5px rgba(217, 217, 217, 0.3) inset;
+    height:100%;
+    margin:40px -10px;
+    padding:10px;
+
+  }
+  
+  
+  
+
+ 
 }
 
-.pointer {
-  color: rgba(39, 162, 219);
-  background: rgba(39, 162, 219, 0.1);
-  border-left: 2px solid rgba(39, 162, 219);
-}
 
-/* main-container */
-.main-wrapper {
+
+
+/* 
+
+
+
+.adminOverViewDashboard-main-wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -82,7 +110,7 @@
 
 }
 
-.inner-wrapper {
+.adminOverViewDashboard-inner-wrapper {
   background: #fff;
   box-shadow: 0 0 5px 5px rgba(217, 217, 217, 0.3) inset;
   padding: 0.5rem 3rem;
@@ -90,71 +118,41 @@
   width: 400px;
 }
 
-/* right */
-.right {
+.adminOverViewDashboard-right {
   display: flex;
   flex-direction: column;
   gap: 7rem;
 }
 
-.bold {
+.adminOverViewDashboard-bold {
   font-weight: 600;
   font-size: 1.5rem;
 }
 
-.item {
-  display: flex;
-  justify-content: space-between;
-  margin: 1.5rem 0;
-  border-bottom: 3px solid rgba(39, 162, 219, 0.1);
+
+
+.adminOverViewDashboard-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 
-
-@media (max-width: 425px) {
-  .header-right {
-    display: none;
-  }
-
-  .side-bar {
-    display: none;
-  }
-
-  .inner-wrapper {
-    width: 250px;
-  }
-
-  .admin-overview-main-container {
-    padding: 0 1rem;
-  }
-
-  .main-wrapper {
-    gap: 3rem;
-  }
-
-  .right {
-    gap: 3rem;
-  }
-}
-/*
-@media (max-width: 640px) {
-} */
-
-/* Media query for screens smaller than 768px */
 @media (max-width: 768px) {
-  .header-left {
+  .adminOverViewDashboard-header-left {
     width: 300px;
   }
 
-  .btn-report {
+  .adminOverViewDashboard-btn-report {
     margin-left: 1rem;
   }
 
-  .admin-overview-main-container {
+  .adminOverViewDashboard-main-container {
     padding: 1rem 3rem;
   }
 
-  .main-wrapper {
+  .adminOverViewDashboard-main-wrapper {
     justify-content: center;
   }
-}
+} */
