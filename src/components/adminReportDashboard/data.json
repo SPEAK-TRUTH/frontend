@@ -1,0 +1,182 @@
+[
+    {
+        "ID": 1,
+        "department": "IT",
+        "category": "Hardware",
+        "subject": "Computer Crash",
+        "description": "The computer in office 301 has crashed and is not starting up.",
+        "reportedDate": "2023-05-21T10:30:00",
+        "assignee": "John Doe"
+    },
+    {
+        "ID": 2,
+        "department": "HR",
+        "category": "Recruitment",
+        "subject": "New Job Posting",
+        "description": "We need to post a new job for a Project Manager position.",
+        "reportedDate": "2023-05-22T14:45:00",
+        "assignee": "Jane Smith"
+    },
+    {
+        "ID": 3,
+        "department": "Finance",
+        "category": "Invoicing",
+        "subject": "Late Invoice",
+        "description": "Invoice #1234 from ABC Corp has not been paid.",
+        "reportedDate": "2023-05-21T09:15:00",
+        "assignee": "Robert Brown"
+    },
+    {
+        "ID": 4,
+        "department": "Marketing",
+        "category": "Campaign",
+        "subject": "New Marketing Campaign",
+        "description": "We need to start planning for the fall marketing campaign.",
+        "reportedDate": "2023-05-23T16:20:00",
+        "assignee": "Emily Davis"
+    },
+    {
+        "ID": 5,
+        "department": "Sales",
+        "category": "Lead Generation",
+        "subject": "New Sales Lead",
+        "description": "We have received a new sales lead from XYZ Corp.",
+        "reportedDate": "2023-05-24T11:55:00",
+        "assignee": "James White"
+    },
+    {
+        "ID": 6,
+        "department": "Engineering",
+        "category": "Product",
+        "subject": "New Feature Request",
+        "description": "A customer has requested a new feature in our product.",
+        "reportedDate": "2023-05-20T13:10:00",
+        "assignee": "Anna Johnson"
+    },
+    {
+        "ID": 7,
+        "department": "Operations",
+        "category": "Inventory",
+        "subject": "Low Stock",
+        "description": "Our stock of product XYZ is running low.",
+        "reportedDate": "2023-05-19T08:45:00",
+        "assignee": "Andrew Martinez"
+    },
+    {
+        "ID": 8,
+        "department": "IT",
+        "category": "Software",
+        "subject": "System Update",
+        "description": "Our main system needs an update.",
+        "reportedDate": "2023-05-18T17:30:00",
+        "assignee": "Brian Anderson"
+    },
+    {
+        "ID": 9,
+        "department": "HR",
+        "category": "Benefits",
+        "subject": "Health Benefits Update",
+        "description": "We need to update our health benefits plan.",
+        "reportedDate": "2023-05-17T09:55:00",
+        "assignee": "Catherine Taylor"
+    },
+    {
+        "ID": 10,
+        "department": "Finance",
+        "category": "Budget",
+        "subject": "Budget Approval",
+        "description": "The budget for Q3 needs approval.",
+        "reportedDate": "2023-05-16T12:40:00",
+        "assignee": "Edward Thomas"
+    },
+    {
+        "ID": 11,
+        "department": "Marketing",
+        "category": "Research",
+        "subject": "Market Analysis",
+        "description": "We need to conduct a market analysis for product XYZ.",
+        "reportedDate": "2023-05-15T15:25:00",
+        "assignee": "Fiona Jackson"
+    },
+    {
+        "ID": 12,
+        "department": "Sales",
+        "category": "Customer",
+        "subject": "Customer Complaint",
+        "description": "There is a customer complaint about product XYZ.",
+        "reportedDate": "2023-05-14T10:05:00",
+        "assignee": "George Harris"
+    },
+    {
+        "ID": 13,
+        "department": "Engineering",
+        "category": "Maintenance",
+        "subject": "Routine Check",
+        "description": "The server room needs a routine check.",
+        "reportedDate": "2023-05-13T11:20:00",
+        "assignee": "Hannah Clark"
+    },
+    {
+        "ID": 14,
+        "department": "Operations",
+        "category": "Shipping",
+        "subject": "Delayed Shipment",
+        "description": "The shipment for ABC Corp has been delayed.",
+        "reportedDate": "2023-05-12T14:15:00",
+        "assignee": "Ian Lewis"
+    },
+    {
+        "ID": 15,
+        "department": "IT",
+        "category": "Network",
+        "subject": "Network Issue",
+        "description": "The office network is down.",
+        "reportedDate": "2023-05-11T09:50:00",
+        "assignee": "Julia Robinson"
+    },
+    {
+        "ID": 16,
+        "department": "HR",
+        "category": "Policy",
+        "subject": "Policy Update",
+        "description": "We need to update our work from home policy.",
+        "reportedDate": "2023-05-10T15:35:00",
+        "assignee": "Kevin Hall"
+    },
+    {
+        "ID": 17,
+        "department": "Finance",
+        "category": "Payroll",
+        "subject": "Salary Update",
+        "description": "The salaries for Q3 need to be updated.",
+        "reportedDate": "2023-05-09T12:25:00",
+        "assignee": "Laura Wilson"
+    },
+    {
+        "ID": 18,
+        "department": "Marketing",
+        "category": "Social Media",
+        "subject": "Social Media Update",
+        "description": "We need to update our social media profiles.",
+        "reportedDate": "2023-05-08T14:30:00",
+        "assignee": "Michael King"
+    },
+    {
+        "ID": 19,
+        "department": "Sales",
+        "category": "Contract",
+        "subject": "Contract Renewal",
+        "description": "The contract with ABC Corp needs renewal.",
+        "reportedDate": "2023-05-07T09:55:00",
+        "assignee": "Natalie Moore"
+    },
+    {
+        "ID": 20,
+        "department": "Engineering",
+        "category": "Infrastructure",
+        "subject": "Infrastructure Upgrade",
+        "description": "Our server infrastructure needs an upgrade.",
+        "reportedDate": "2023-05-06T16:10:00",
+        "assignee": "Oliver Wright"
+    }
+]

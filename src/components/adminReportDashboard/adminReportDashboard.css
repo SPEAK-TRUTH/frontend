@@ -1,197 +1,172 @@
-.admin-report-container {
-  /* min-width: 100vw;
-  min-height: 100vh; */
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  justify-content: space-between;
+.adminReportDashboard {
+  width: 95%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  margin:0 auto;
 }
 
-
-
-.header-left {
-  width: 350px;
-  height: auto;
-  transition: width 0.5s;
-  padding: 20px 0;
+.adminReportDashboard-main-container{
+  margin-top:50px;
 }
 
-.logo {
-  height: auto;
-  width: 100%;
-  padding: 10px;
+.adminReportDashboard-main-wrapper-table {
+  position: relative;
+  overflow-x: auto; /* added overflow-x auto here */
 }
-
-.btn {
-  border: 1px solid rgba(39, 162, 219);
-  padding: 0.4rem 1rem;
-  font-weight: 600;
-  border-radius: 0.3rem;
-  cursor: pointer;
-}
-
-.overview {
-  color: #fff;
-  background-color: rgba(39, 162, 219);
-}
-
-.btn-report {
-  margin-left: 3rem;
-  color: rgba(39, 162, 219);
-  background: #fff;
-}
-
-.admin-report-mainadmin-report--container {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 3rem;
-}
-
-/* side-bar */
-.side-bar {
+.adminReportDashboard-main-wrapper-table table {
+  table-layout: fixed;
   width: 150px;
-  font-weight: 600;
-  /* padding-right: 2rem; */
-  border-right: 2px solid rgb(217, 217, 217);
-  box-sizing: border-box;
 }
 
-.bar-item {
-  margin-bottom: 1rem;
-  padding: 0.2rem 0 0.2rem 1rem;
-}
-
-.pointer {
-  color: rgba(39, 162, 219);
-  background: rgba(39, 162, 219, 0.1);
-  border-left: 2px solid rgba(39, 162, 219);
-}
-
-/* mainadmin-report--container */
-.main-wrapper-table {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  align-items: center;
-  margin: 5rem auto;
-  width: 80%;
-}
-
-/* table */
-table {
+.adminReportDashboard table {
   width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
+  margin-bottom: 2rem;
+  border-spacing: 0;
+}
+
+.adminReportDashboard th,
+.adminReportDashboard td {
   text-align: left;
-  overflow-y: auto;
-  overflow-x: auto;
-  /* overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; */
+  padding: 24px;
 }
-
-thead {
-  overflow-y: auto;
-  overflow-x: auto;
-}
-
-tbody {
-  overflow-y: scroll;
-  overflow-x: scroll;
-  /* height: 400px;
-  width: 400px; */
-}
-
-th,
-td {
-  padding: 0.5rem 1rem;
-}
-
-th {
-  background: rgba(217, 217, 217, 0.5);
-}
-
-tr:nth-child(even) {
-  background: rgba(217, 217, 217, 0.5);
-}
-
-tr {
+/* To make sure the text does not overflow */
+.adminReportDashboard-main-wrapper-table td,
+.adminReportDashboard-main-wrapper-table th {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.sort {
-  color: gray;
-  text-decoration: underline;
+
+.adminReportDashboard thead tr {
+  background-color: rgba(217, 217, 217, 0.5);;
 }
 
-/* pagination */
-.pagination {
-  margin: 0 auto;
-  margin-bottom: 3rem;
+.adminReportDashboard tbody tr:nth-child(odd) {
+  background-color: #ffff;
 }
 
-.btn-arrow {
-  margin: 0 .3rem;
+.adminReportDashboard tbody tr:nth-child(even) {
+  background-color: rgba(217, 217, 217, 0.5);;
+}
+
+.adminReportDashboard-btn {
+  background-color: #007BFF;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
   cursor: pointer;
-  color: rgba(39, 162, 219);
-
-  background: #fff;
-  border: 1px solid rgba(39, 162, 219);
+  margin-right: 1rem;
 }
 
-.page-text {
-  margin: 0 .8rem;
+.adminReportDashboard-btn:hover {
+  background-color: #0056b3;
+}
+
+.adminReportDashboard-btn-arrow:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.adminReportDashboard-page-text {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.adminReportDashboard-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
 }
 
 
 
-@media (max-width: 425px) {
-  
-  .header-right {
-    display: none;
-  }
 
-  .side-bar {
-    display: none;
-  }
 
-  .inner-wrapper {
-    width: 250px;
-  }
-
-  .admin-report-mainadmin-report--container {
-    padding: 0 1rem;
-  }
-
-  .main-wrapper-table {
-    gap: 3rem;
-  }
-
-  .right {
-    gap: 3rem;
-  }
+.dropdown {
+  position: relative;
+  width:100%;
+  margin-bottom:15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-/*
-@media (max-width: 640px) {
-} */
 
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
-  .header-left {
-    width: 300px;
-  }
+.dropdownButton {
+  width:auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #718096;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.dropdownButtonImage{
+  width:10px;
+  margin-left:10px;
+}
+.sortImage{
+  width:10px;
+}
 
-  .btn-report {
-    margin-left: 1rem;
-  }
+.dropdownMenu {
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 #1a202c;
+  border-radius: 0.375rem;
+  width: 12rem;
+  z-index: 10;
+}
 
-  /* .admin-report-mainadmin-report--container {
-    padding: 1rem 3rem;
-  } */
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
 
-  .main-wrapper-table {
-    justify-content: center;
-  }
+.dropdownInput {
+  width: 1rem;
+  height: 1rem;
+  background-color: #edf2f7;
+  border-color: #e2e8f0;
+}
+
+.dropdownLabel {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+
+.pagination{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+
+  margin:50px 0px 100px 0px;
+}
+
+.pagination a{
+  font-size: 16px;
+  padding:10px 30px;
+  border-left: 1px solid #D9D9D9;
+}
+
+.pagination a.active{
+  font-size: 16px;
+  font-weight: 800;
+  color:#27A2DB;
+}
+
+.pagination a:last-of-type{
+  padding:10px 30px;
+  border-right: 1px solid #D9D9D9;
 }
