@@ -127,91 +127,87 @@ const AdminReportDashboard = () => {
 
         <div className="adminReportDashboard-main-container">
           <div className="adminReportDashboard-main-wrapper-table">
-            <div className="dropdown" ref={dropdownRef}>
-
-              <button
-                id="dropdownRadioButton"
-                type="button"
-                className="dropdownButton"
-                onClick={() => setMenuOpen(!menuOpen)}
-              >
-                {selection}
-                <img src={ArrowIcon} alt="" className="dropdownButtonImage" />
-              </button>
-
-              {menuOpen && (
-                <div
-                  id="dropdownRadio"
-                  className="dropdownMenu"
+              <div className="dropdown" ref={dropdownRef}>
+                <button
+                  id="dropdownRadioButton"
+                  type="button"
+                  className="dropdownButton"
+                  onClick={() => setMenuOpen(!menuOpen)}
                 >
-                  <ul aria-labelledby="dropdownRadioButton">
-
-                    {options.map((option, index) => (
-                      <li key={index}>
-                        <div
-                          className="dropdownItem"
-                        >
-                          <input
-                            id={`filter-radio-example-${index}`}
-                            type="radio"
-                            value={option}
-                            name="filter-radio"
-                            className="dropdownInput"
-                            onChange={handleChange}
-                            checked={selection === option}
-                          />
-                          <label
-                            htmlFor={`filter-radio-example-${index}`}
-                            className="dropdownLabel"
+                  {selection}
+                  <img src={ArrowIcon} alt="" className="dropdownButtonImage" />
+                </button>
+                {menuOpen && (
+                  <div
+                    id="dropdownRadio"
+                    className="dropdownMenu"
+                  >
+                    <ul aria-labelledby="dropdownRadioButton">
+                      {options.map((option, index) => (
+                        <li key={index}>
+                          <div
+                            className="dropdownItem"
                           >
-                            {option}
-                          </label>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              <img src={SortIcon} onClick={toggleSort} className="sortImage" />
-            </div>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Department</th>
-                  <th>Category</th>
-                  <th>Subject</th>
-                  <th>Description</th>
-                  <th>ReportedDate</th>
-                  <th>Assignee</th>
-                </tr>
-              </thead>
-              <tbody>
-                {currentItems.map((item, index) => (
-                  <tr key={item.ID}>
-                    <td>{item.ID}</td>
-                    <td>{item.department}</td>
-                    <td>{item.category}</td>
-                    <td>{item.subject}</td>
-                    <td>{truncateDescription(item.description)}</td>
-                    <td>{new Date(item.reportedDate).toISOString().split('T')[0]}</td>
-                    <td>{item.assignee}</td>
+                            <input
+                              id={`filter-radio-example-${index}`}
+                              type="radio"
+                              value={option}
+                              name="filter-radio"
+                              className="dropdownInput"
+                              onChange={handleChange}
+                              checked={selection === option}
+                            />
+                            <label
+                              htmlFor={`filter-radio-example-${index}`}
+                              className="dropdownLabel"
+                            >
+                              {option}
+                            </label>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                <img src={SortIcon} onClick={toggleSort} className="sortImage" />
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Department</th>
+                    <th>Category</th>
+                    <th>Subject</th>
+                    <th>Description</th>
+                    <th>ReportedDate</th>
+                    <th>Assignee</th>
                   </tr>
+                </thead>
+                <tbody>
+                  {currentItems.map((item, index) => (
+                    <tr key={item.ID}>
+                      <td>{item.ID}</td>
+                      <td>{item.department}</td>
+                      <td>{item.category}</td>
+                      <td>{item.subject}</td>
+                      <td>{truncateDescription(item.description)}</td>
+                      <td>{new Date(item.reportedDate).toISOString().split('T')[0]}</td>
+                      <td>{item.assignee}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div className="pagination">
+                {Array.from({ length: totalPages }, (_, index) => (
+                  <a
+                    key={index}
+                    onClick={() => paginate(index + 1)}
+                    className={currentPage === index + 1 ? "active" : ""}
+                  >
+                    {index + 1}
+                  </a>
                 ))}
-              </tbody>
-            </table>
-            <div className="pagination">
-              {Array.from({ length: totalPages }, (_, index) => (
-                <a
-                  key={index}
-                  onClick={() => paginate(index + 1)}
-                  className={currentPage === index + 1 ? "active" : ""}
-                >
-                  {index + 1}
-                </a>
-              ))}
-            </div>
+              </div>
           </div>
         </div>
         <Footer />
