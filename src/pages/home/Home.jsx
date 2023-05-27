@@ -1,33 +1,36 @@
 // library
-import React from "react"
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { Element } from 'react-scroll';
+import SectionContext from "../../contexts/SectionContext.jsx";
 
 // components
-import TopHeader from "../../components/topHeader/TopHeader.jsx"
-
-// css
-import "./home.css"
-import Meeting from "../../assets/homeImages/meeting.jpeg"
+import TopHeader from "../../components/topHeader/TopHeader.jsx";
 import FAQ from "../FAQ/FAQ.jsx";
 import About from "../about/About.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 
-
-
+// css
+import "./home.css";
+import Meeting from "../../assets/homeImages/meeting.jpeg";
 
 const Home = () => {
+  const { section } = useContext(SectionContext);
 
-  
-
+  useEffect(() => {
+    if (section) {
+      const element = document.getElementById(section.replace("#", ""));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [section]);
 
   return (
-    <div className="home" id="page-wrap" >
-      
+    <div className="home" id="page-wrap">
       <TopHeader />
 
       <div className="homeSectionWrapper">
-
         {/* box1 */}
         <div className="homeLeftSection">
           <div className="homeIntroduction">
@@ -37,10 +40,9 @@ const Home = () => {
           </div>
           <div className="homeHeaderLinkWrapper">
             <Link to='/reportForm' className="homeHeader_link">
-                <span className='homeHeaderlink'>Report</span>
+              <span className='homeHeaderlink'>Report</span>
             </Link>
           </div>
-          
         </div>
 
         {/* box2 */}
@@ -55,11 +57,15 @@ const Home = () => {
         <h3>SPEAKTRUTH provides support for a variety of workplace, educational, and cultural settings.</h3>
       </div>
 
-      <About />
-      <FAQ />
+      <Element id="about">
+        <About />
+      </Element>
+      <Element id="faq">
+        <FAQ />
+      </Element>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

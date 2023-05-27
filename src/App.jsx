@@ -12,17 +12,25 @@ import CheckReport from "./components/checkReport/CheckReport.jsx"
 import Confirmation from "./components/confirmation/Confirmation.jsx"
 import ReportForm from "./pages/reportForm/ReportForm.jsx";
 
+import Privacy from "./pages/privacy/Privacy.jsx";
+
 import Login from "./pages/login/Login.jsx"
 import Signup from "./pages/signup/Signup.jsx"
 
+import SectionContext from "./contexts/SectionContext.jsx";
+
 // css
 import "./App.css"
+import { useState } from "react";
 
 
 
 function App() {
+  const [section, setSection] = useState("");
+
 
   return (
+    <SectionContext.Provider value={{ section, setSection }}>
     <div  className="app" id="outer-container">
     <Router>
       <Routes>
@@ -36,6 +44,7 @@ function App() {
         <Route path="/reportForm" element={<ReportForm />} />
         <Route path="/userReport" element={<UserReport />} />
         <Route path="/confirmation" element={<Confirmation />} />
+        <Route path="/privacy" element={<Privacy />} />
 
         {/* admin */}
         <Route path="/adminReport" element={<AdminReport />} />
@@ -46,6 +55,7 @@ function App() {
       </Routes>
     </Router>
     </div>
+    </SectionContext.Provider>
   );
 }
 
