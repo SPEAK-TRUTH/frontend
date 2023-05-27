@@ -47,10 +47,13 @@
 .formSubject input{
     box-sizing: border-box;
     width: 80%;
+    
     height: 50px;
     border: 1px solid #6B707B;
     border-radius: 5px;
     margin:0 auto;
+    padding:10px;
+    font-size: 16px;
 }
 
 /* incidentDate */
@@ -78,6 +81,8 @@
     border: 1px solid #6B707B;
     border-radius: 5px;
     margin:0 auto;
+    padding:10px;
+    font-size: 16px;
 }
 
 /* Department */
@@ -105,6 +110,8 @@
     border: 1px solid #6B707B;
     border-radius: 5px;
     margin:0 auto;
+    padding:10px;
+    font-size: 16px;
 }
 
 /* categories */
@@ -132,6 +139,8 @@
     border: 1px solid #6B707B;
     border-radius: 5px;
     margin:0 auto;
+    padding:10px;
+    font-size: 16px;
 }
 
 /* content */
@@ -159,6 +168,8 @@
     border: 1px solid #6B707B;
     border-radius: 5px;
     margin:0 auto;
+    padding:10px;
+    font-size: 16px;
 }
 
 /* attachment */
@@ -186,6 +197,8 @@
     border: 1px solid #6B707B;
     border-radius: 5px;
     margin:0 auto;
+    padding:10px;
+    font-size: 16px;
 }
 
 .drag-drop-zone {
@@ -256,6 +269,8 @@ line-height: 22px;
     border: 1px solid #6B707B;
     border-radius: 5px;
     margin:0 auto;
+    padding:10px;
+    font-size: 16px;
 }
 
 .reportFormLinkWrapper{
