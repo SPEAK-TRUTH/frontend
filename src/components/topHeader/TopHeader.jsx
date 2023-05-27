@@ -38,14 +38,6 @@ const TopHeader = () => {
     };
   });
 
-  const onClickAbout = () => {
-    window.location.assign("/#about");
-  };
-  
-  const onClickFAQ = () => {
-    window.location.assign("/#faq");
-  };
-
   const handleLinkClick = (section) => {
     if (location.pathname !== '/') {
       navigate('/').then(() => {

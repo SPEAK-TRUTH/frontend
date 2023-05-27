@@ -32,6 +32,10 @@
     align-items: center;
 }
 
+.topHeaderlinks a{
+    cursor: pointer;
+}
+
 
 .topHeader_link:not(:last-child){
     width:auto;
