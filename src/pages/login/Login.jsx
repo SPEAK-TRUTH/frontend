@@ -1,15 +1,33 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './login.css';
 import SpeakTruthLogo from "../../assets/images/speaktruth-high-resolution-logo-color-on-transparent-background.png";
+import { axiosInstance } from "../../config";
+
 
 const Login = () => {
-  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
+  const navigate = useNavigate();
+
+
+
 
   const submitHandler = async (e) => {
     e.preventDefault();
     setError(false);
+    try {
+      // Call the signInController here
+      const response = await axiosInstance.post('api/auth/signin', { email, password });
+      console.log(response.data);
+      localStorage.setItem('token', response.data.token);
+      navigate('/adminOverviewDashboard');
+
+    } catch (error) {
+      console.error('Error:', error);
+      setError(true);
+    }
   };
 
   return (
@@ -27,26 +45,36 @@ const Login = () => {
             <div className="login-form-panel">
               <h1>Login into your account</h1>
               <form className="login-form" onSubmit={submitHandler}>
-                <label>Username</label>
+                <label>Email</label>
                 <input
-                  type="text"
+                   type="email"
+                   name="email"
+                   value={email}
                   className="loginInput"
                   required={true}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
-                <label>Password</label>
+                <label htmlFor="password">Password</label>
                 <input
+                  id="password"
+                  name="password"
                   type="password"
-                  className="loginInput"
+                  autoComplete="current-password"
                   required={true}
+                  className="loginInput"
+                  value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                  
+                  
                 />
                 <button className="login-form-submit-button" type="submit">
                   Login
                 </button>
               </form>
-              {error && <span style={{color: "red", marginTop: "5px"}}>Username and password do not match.</span>  }
+              {error && <span style={{color: "red"}}>Username and password do not match.</span>  }
   
               {/* Sign up */}
-              <div style={{marginTop: "15px", textAlign: "center"}}>
+              <div style={{marginTop: "30px", textAlign: "center"}}>
                 <span style={{fontSize: "14px", color: "#4B5563"}}>Don’t have an account yet?</span>
                 <Link to="/signup" style={{color: "#2563EB", marginLeft: "5px", textDecoration: "none"}}>Sign up</Link>
               </div>
