@@ -19,7 +19,7 @@ const Login = () => {
     setError(false);
     try {
       // Call the signInController here
-      const response = await axiosInstance.post('api/auth/signin', { email, password });
+      const response = await axiosInstance.post('auth/signin', { email, password });
       console.log(response.data);
       localStorage.setItem('token', response.data.token);
       navigate('/adminOverviewDashboard');
