@@ -15,7 +15,7 @@ const Signup = () => {
     e.preventDefault();
     // Add code here to handle sign up
     try {
-      const response = await axiosInstance.post('api/auth/signup', { username, email, password });
+      const response = await axiosInstance.post('auth/signup', { username, email, password });
 
       console.log(response.data);
       console.log('User signed up!');
