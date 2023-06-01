@@ -1,9 +1,9 @@
+// Import necessary libraries
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import './signup.css';
 import SpeakTruthLogo from "../../assets/images/speaktruth-high-resolution-logo-color-on-transparent-background.png";
 import { axiosInstance } from "../../config";
-
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -13,12 +13,8 @@ const Signup = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    // Add code here to handle sign up
     try {
-      const response = await axiosInstance.post('auth/signup', { username, email, password });
-
-      console.log(response.data);
-      console.log('User signed up!');
+      await axiosInstance.post('/auth/signup', { username, email, password });
       navigate('/login');
     } catch (error) {
       console.error('Error:', error);
@@ -28,19 +24,14 @@ const Signup = () => {
   return (
     <div className="signup">
       <div className="signup-form-container">
-  
-        {/* box1 */}
         <div className="signup-form-logo-wrapper">
-          <img src={SpeakTruthLogo} alt="" />
+          <img src={SpeakTruthLogo} alt="SpeakTruth Logo" />
         </div>
-  
-        {/* box2 */}
         <div className="signup-form-wrapper">
           <div className="signup-form-panel-wraper">
             <div className="signup-form-panel">
               <h1>Create a new account</h1>
               <form className="signup-form" onSubmit={submitHandler}>
-                
                 <label>Username</label>
                 <input
                   id="username"
@@ -52,7 +43,6 @@ const Signup = () => {
                   required={true}
                   onChange={(e) => setUsername(e.target.value)}
                 />
-
                 <label>Email</label>
                 <input
                   type="email"
@@ -63,36 +53,30 @@ const Signup = () => {
                   autoComplete="email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
-
                 <label>Password</label>
                 <input
-                   id="password"
-                   name="password"
-                   type="password"
-                   value={password}
-                   autoComplete="new-password"
+                  id="password"
+                  name="password"
+                  type="password"
+                  value={password}
+                  autoComplete="new-password"
                   className="signupInput"
                   required={true}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <button className="signup-form-submit-button" type="submit">
-                  Sign Up
-                </button>
+                <button className="signup-form-submit-button" type="submit">Sign Up</button>
               </form>
-  
-              {/* login */}
+
               <div style={{marginTop: "30px", textAlign: "center"}}>
                 <span style={{fontSize: "14px", color: "#4B5563"}}>Already have an account?</span>
                 <Link to="/login" style={{color: "#2563EB", marginLeft: "5px", textDecoration: "none"}}>Log in</Link>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
     </div>
   );
-  
 };
 
 export default Signup;
