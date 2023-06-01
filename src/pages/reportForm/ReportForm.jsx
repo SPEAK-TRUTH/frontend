@@ -9,6 +9,35 @@ import Footer from "../../components/footer/Footer";
 import "./reportForm.css"
 import Cloud from "../../assets/reportForm/cloud.svg"
 
+
+// Import icons
+import PdfIcon  from "../../assets/fileIcons/pdf-icon1.png";
+import DocIcon from "../../assets/fileIcons/doc-icon1.png";
+import XlsIcon from "../../assets/fileIcons/xlc-icon1.png";
+import JpegIcon from "../../assets/fileIcons/jpeg-icon1.png";
+import { axiosInstance, axiosInstanceWithUploads } from "../../config";
+
+const getIconForFileType = (filename) => {
+    const extension = filename.split(".").pop().toLowerCase();
+  
+    switch (extension) {
+      case "pdf":
+        return <img src={PdfIcon} alt="PDF Icon" className="extensionIcon" />;
+      case "doc":
+      case "docx":
+        return <img src={DocIcon} alt="DOC Icon" className="extensionIcon" />;
+      case "xls":
+      case "xlsx":
+        return <img src={XlsIcon} alt="XLS Icon" className="extensionIcon" />;
+      case "jpg":
+      case "jpeg":
+      case "png":
+        return <img src={JpegIcon} alt="JPEG/PNG Icon" className="extensionIcon" />;
+      default:
+        return null;
+    }
+  };
+
 const ReportForm = () => {
   const [reportData, setReportData] = useState({
     subject: "",
@@ -24,7 +53,7 @@ const ReportForm = () => {
 
   useEffect(() => {
     if (reportKey) {
-      navigate("/ConfirmPage", { state: { reportKey } });
+      navigate("/confirmation", { state: { reportKey } });
     }
   }, [reportKey, navigate]);
 
@@ -81,16 +110,18 @@ const ReportForm = () => {
       console.log('uploadFormData:', uploadFormData);
 
       console.log("Uploading files...");
-      // const uploadResponse = await axiosInstance.post("/api/upload", uploadFormData, {
+      // const uploadResponse = await axiosInstance.post("/upload", uploadFormData, {
       //   headers: {
       //     "Content-Type": "multipart/form-data",
       //   },
       // });
-      const uploadResponse = await axios.post("http://localhost:5002/api/upload", uploadFormData, {
+      // const uploadResponse = await axiosInstanceWithUploads.post("/upload", uploadFormData);
+      const uploadResponse = await axios.post("https://speaktruth-backend.herokuapp.com/api/upload", uploadFormData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
+     
       console.log("Upload response data:", uploadResponse.data);
       console.log("Upload response:", uploadResponse);
 
@@ -102,18 +133,23 @@ const ReportForm = () => {
         files: uploadedFileNames,
       };
 
-      // const reportResponse = await axiosInstance.post("/api/reports/create", reportToSubmit);
+      const reportResponse = await axiosInstance.post("/reports/create", reportToSubmit);
+      // const reportResponse = await axios.post("https://speaktruth-backend.herokuapp.com/api/reports/create", reportToSubmit,{
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      // });
+
       console.log("Sending data to the server:", reportToSubmit);
-      const reportResponse = await axios.post("http://localhost:5002/api/reports/create", reportToSubmit);
       console.log("Report submission response:", reportResponse);
       console.log("Report key:", reportResponse.data.report.reportKey);
 
       // setReportKey(reportResponse.data.report.reportKey);
-      // navigate("/ConfirmPage", { state: { reportKey } });
+      // navigate("/confirmation", { state: { reportKey } });
 
       setReportKey(reportResponse.data.report.reportKey);
 
-      alert("Report submitted successfully.");
+      // alert("Report submitted successfully.");
       setReportData({
         subject: "",
         incidentDate: "",
@@ -133,6 +169,13 @@ const ReportForm = () => {
       alert("Error submitting report.");
     }
   };
+
+  const handleDeleteFile = (index) => {
+    const newFilesArray = [...reportData.files];
+    newFilesArray.splice(index, 1);
+    setReportData({ ...reportData, files: newFilesArray });
+  };
+  
 
   return (
     <>
@@ -259,19 +302,39 @@ const ReportForm = () => {
                 
               </div>
             </div>
-            <ul>
+
+            <div className="reportForm-file-lists-wrapper">
               {reportData.files.map((file, index) => (
-                <li key={index}>
-                  {file.name}
-                </li>
-              ))}
-            </ul>
+                  <div className="toast-undo" role="alert" key={index}>
+                    <ul>
+                      
+                      <li  className="reportData-list-icon-file-name">
+                        {getIconForFileType(file.name)}
+                        {file.name}
+                      </li>
+                      <div className="actions">
+                        <button 
+                          onClick={() => handleDeleteFile(index)} 
+                          type="button" 
+                          className="close" 
+                          aria-label="Delete">
+                          Delete
+                        </button>
+                      </div>
+                      </ul>
+                  </div>
+                ))}
+            </div>
           </div>
 
           <div className="reportFormLinkWrapper">
-            <Link to='/reportForm' className="reportForm_link">
-                <span className='reportFormlink'>Submit</span>
-            </Link>
+            
+             
+                {/* <Link to='/reportForm' className="reportForm_link">
+                    <button type="submit" className=''>Submit</button>
+                </Link> */}
+                <button type="submit" className=''>Submit</button>
+              
 
             <Link to='/' className="reportForm_link">
                 <span className='reportFormlink'>Back</span>
@@ -288,6 +351,4 @@ const ReportForm = () => {
   );
   
 }
-
-
 export default ReportForm;

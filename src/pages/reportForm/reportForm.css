@@ -175,7 +175,7 @@
 /* attachment */
 .formAttachmentWrapper{
     width:100%;
-    margin-bottom:100px;
+    margin-bottom: 200px;
 }
 
 .formAttachment{
@@ -254,7 +254,7 @@ line-height: 22px;
     width:100%;
     display: flex;
     flex-direction: column;
-    
+    margin-bottom:40px;
 }
 .formAttachment label {
     width: 80%;
@@ -280,6 +280,11 @@ line-height: 22px;
     display:flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.reportFormLinkWrapper button{
+
+all: unset
 }
 
 .reportForm_link{
@@ -313,6 +318,58 @@ border-radius: 5px;
 
     font-family: 'Open Sans';
     font-size: 14px;
+}
+
+.reportForm-file-lists-wrapper{
+    width: 80%;
+    height:auto;
+    margin:0 auto;
+}
+
+.toast-undo {
+    margin:10px 0px;
+    padding:10px;
+    color: gray;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #D9D9D9;
+}
+
+.toast-undo ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toast-undo li{
+    list-style-type: none;
+}
+
+.reportData-list-icon-file-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.toast-undo button {
+    color: gray; /* text-gray-400 */
+    background-color: white; /* bg-white */
+}
+
+.toast-undo button:hover {
+    color: #1a202c; /* text-gray-900 */
+    background-color: #f7fafc; /* hover:bg-gray-100 */
+}
+
+.toast-undo button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #d2d6dc; /* focus:ring-2 focus:ring-gray-300 */
+}
+
+.toast-undo svg {
+    width: 1.25rem; /* w-5 */
+    height: 1.25rem; /* h-5 */
 }
 
 
