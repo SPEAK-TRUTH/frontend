@@ -15,6 +15,7 @@ import PdfIcon  from "../../assets/fileIcons/pdf-icon1.png";
 import DocIcon from "../../assets/fileIcons/doc-icon1.png";
 import XlsIcon from "../../assets/fileIcons/xlc-icon1.png";
 import JpegIcon from "../../assets/fileIcons/jpeg-icon1.png";
+import RemoveIcon from "../../assets/reportForm/remove-icon.svg"
 import { axiosInstance, axiosInstanceWithUploads } from "../../config";
 
 const getIconForFileType = (filename) => {
@@ -56,6 +57,11 @@ const ReportForm = () => {
       navigate("/confirmation", { state: { reportKey } });
     }
   }, [reportKey, navigate]);
+
+  useEffect(() => {
+    // console.log('reportData.files changed:', reportData.files);
+  }, [reportData.files]);
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -107,27 +113,18 @@ const ReportForm = () => {
 
       });
 
-      console.log('uploadFormData:', uploadFormData);
+      // console.log('uploadFormData:', uploadFormData);
 
-      console.log("Uploading files...");
-      // const uploadResponse = await axiosInstance.post("/upload", uploadFormData, {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   },
-      // });
-      // const uploadResponse = await axiosInstanceWithUploads.post("/upload", uploadFormData);
-      const uploadResponse = await axios.post("https://speaktruth-backend.herokuapp.com/api/upload", uploadFormData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      // console.log("Uploading files...");
+      
+      const uploadResponse = await axiosInstanceWithUploads.post("/upload", uploadFormData);
      
-      console.log("Upload response data:", uploadResponse.data);
-      console.log("Upload response:", uploadResponse);
+      // console.log("Upload response data:", uploadResponse.data);
+      // console.log("Upload response:", uploadResponse);
 
       // Create report
       const uploadedFileNames = uploadResponse.data.fileNames;
-      console.log("Uploaded file names from server:", uploadedFileNames);
+      // console.log("Uploaded file names from server:", uploadedFileNames);
       const reportToSubmit = {
         ...reportData,
         files: uploadedFileNames,
@@ -140,9 +137,9 @@ const ReportForm = () => {
       //   },
       // });
 
-      console.log("Sending data to the server:", reportToSubmit);
-      console.log("Report submission response:", reportResponse);
-      console.log("Report key:", reportResponse.data.report.reportKey);
+      // console.log("Sending data to the server:", reportToSubmit);
+      // console.log("Report submission response:", reportResponse);
+      // console.log("Report key:", reportResponse.data.report.reportKey);
 
       // setReportKey(reportResponse.data.report.reportKey);
       // navigate("/confirmation", { state: { reportKey } });
@@ -161,10 +158,10 @@ const ReportForm = () => {
     } catch (error) {
       console.error("Error:", error);
       if (error.response) {
-        console.log("Error status code:", error.response.status);
-        console.log("Error message:", error.response.data.error);
+        // console.log("Error status code:", error.response.status);
+        // console.log("Error message:", error.response.data.error);
       } else {
-        console.log("No response received from the server.");
+        // console.log("No response received from the server.");
       }
       alert("Error submitting report.");
     }
@@ -198,7 +195,7 @@ const ReportForm = () => {
                 id="subject"
                 value={reportData.subject}
                 onChange={handleChange}
-                required
+                required={true}
               />
             </div>
           </div>
@@ -216,7 +213,7 @@ const ReportForm = () => {
                 id="incidentDate"
                 value={reportData.incidentDate}
                 onChange={handleChange}
-                required
+                required={true}
               />
             </div>
           </div>
@@ -233,7 +230,7 @@ const ReportForm = () => {
                 id="department"
                 value={reportData.department}
                 onChange={handleChange}
-                required
+                required={true}
               />
               </div>
           </div>
@@ -249,7 +246,7 @@ const ReportForm = () => {
                 id="categories"
                 value={reportData.categories.join(", ")}
                 onChange={handleCategoriesChange}
-                required
+                required={true}
               />
             </div>
           </div>
@@ -264,7 +261,7 @@ const ReportForm = () => {
                 id="content"
                 value={reportData.content}
                 onChange={handleChange}
-                required
+                required={true}
                 rows="6"
                 style={{ resize: "vertical" }}
               />
@@ -312,13 +309,13 @@ const ReportForm = () => {
                         {getIconForFileType(file.name)}
                         {file.name}
                       </li>
-                      <div className="actions">
+                      <div className="reportData-actions">
                         <button 
                           onClick={() => handleDeleteFile(index)} 
                           type="button" 
-                          className="close" 
+                          className="reportForm-removeIcon" 
                           aria-label="Delete">
-                          Delete
+                          <img src={RemoveIcon} alt="" />
                         </button>
                       </div>
                       </ul>
@@ -331,17 +328,19 @@ const ReportForm = () => {
             
              
                 {/* <Link to='/reportForm' className="reportForm_link">
-                    <button type="submit" className=''>Submit</button>
+                    <button type="submit" className='reportForm_link-submit-button'>Submit</button>
                 </Link> */}
-                <button type="submit" className=''>Submit</button>
-              
+               
+                <button type="submit" className="reportForm_link">Submit</button>
 
-            <Link to='/' className="reportForm_link">
-                <span className='reportFormlink'>Back</span>
-            </Link>
+              <Link to='/' className="reportForm_link">
+                  Back
+              </Link>
 
             <p>
-              By submitting your information to SPEAKTRUTH, you agree to the Terms of Service and Privacy Policy.
+              By submitting your information to SPEAKTRUTH, you agree to the Terms of Service and <Link to='/privacy' className="reportForm-link-to-privacy">
+                Privacy Policy
+              </Link>.
             </p>
           </div>
         </form>
