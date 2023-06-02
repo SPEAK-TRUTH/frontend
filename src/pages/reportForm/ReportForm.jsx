@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-import { Link } from "react-router-dom";
-
+// Import components
 import TopHeader from "../../components/topHeader/TopHeader";
 import Footer from "../../components/footer/Footer";
-import "./reportForm.css"
+
+// Import assets
 import Cloud from "../../assets/reportForm/cloud.svg"
-
-
-// Import icons
 import PdfIcon  from "../../assets/fileIcons/pdf-icon1.png";
 import DocIcon from "../../assets/fileIcons/doc-icon1.png";
 import XlsIcon from "../../assets/fileIcons/xlc-icon1.png";
 import JpegIcon from "../../assets/fileIcons/jpeg-icon1.png";
 import RemoveIcon from "../../assets/reportForm/remove-icon.svg"
+
+// Import axios config
 import { axiosInstance, axiosInstanceWithUploads } from "../../config";
+
+// Import styles
+import "./reportForm.css"
 
 const getIconForFileType = (filename) => {
     const extension = filename.split(".").pop().toLowerCase();
@@ -131,17 +132,11 @@ const ReportForm = () => {
       };
 
       const reportResponse = await axiosInstance.post("/reports/create", reportToSubmit);
-      // const reportResponse = await axios.post("https://speaktruth-backend.herokuapp.com/api/reports/create", reportToSubmit,{
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      // });
 
       // console.log("Sending data to the server:", reportToSubmit);
       // console.log("Report submission response:", reportResponse);
       // console.log("Report key:", reportResponse.data.report.reportKey);
 
-      // setReportKey(reportResponse.data.report.reportKey);
       // navigate("/confirmation", { state: { reportKey } });
 
       setReportKey(reportResponse.data.report.reportKey);
