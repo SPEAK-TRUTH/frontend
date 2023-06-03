@@ -7,8 +7,8 @@ import TopHeader from "../topHeader/TopHeader";
 
 const Confirmation = () => {
   const location = useLocation();
-  // const reportKey = location.state?.reportKey;
-  const reportKey = "tandom report key";
+  const reportKey = location.state?.reportKey;
+  // const reportKey = "tandom report key";
   const [copyButtonText, setCopyButtonText] = useState("Copy");
   const navigate = useNavigate();
 
