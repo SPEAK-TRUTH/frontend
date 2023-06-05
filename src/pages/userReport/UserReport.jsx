@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-// import axios from 'axios';
-// import DOMPurify from 'dompurify';
+import DOMPurify from 'dompurify';
 
 import Footer from "../../components/footer/Footer"
 import Chat from "../../components/chat/Chat";
 import TopHeader from "../../components/topHeader/TopHeader";
+
+import { axiosInstance } from "../../config";
 
 import "./userReport.css"
 
@@ -38,17 +39,26 @@ const getIconForFileType = (filename) => {
 
 const UserReport = () => {
     const { reportKey } = useParams();
+    console.log("reportKey" + reportKey);
   const [report, setReport] = useState(null);
+  const [loading, setLoading] = useState(true);
   const userRole = "reporter"; 
 
   useEffect(() => {
     const getReport = async () => {
-      const res = await axios.get(`http://localhost:5002/api/reports/get/${reportKey}`);
-      setReport(res.data)
+      const res = await axiosInstance.get(`/reports/get/${reportKey}`);
+      console.log(res.data);  // Log the whole response
+      setReport(res.data);
+      setLoading(false);
     };
     getReport();
-  }, [reportKey]);
 
+  }, [reportKey]);
+  
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const year = date.getFullYear();
@@ -67,7 +77,7 @@ const UserReport = () => {
         <TopHeader />
         <div className="userReport-report">
             <div className="userReport-reportID">
-                <h3>#Letmeseeyourreport123</h3>
+                <h3>{reportKey}</h3>
             </div>
 
             <div className="userReport-reportDetailsWrapper">
@@ -78,12 +88,14 @@ const UserReport = () => {
                         {/* box1 */}
                         <div className="userReport-reportSection">
                             <h3 className="userReport-reportSectionName">Department</h3>
-                            <span>Marketing</span>
+                            <span>{report.department}</span>
                         </div>
                         {/* box2 */}
                         <div className="userReport-reportSection">
                             <h3 className="userReport-reportSectionName">Category</h3>
-                            <span>Harassment</span>
+                            {report.categories.map((category, index) => (
+                                    <span key={index}>{category}</span>
+                                ))}
                         </div>
                     </div>
 
@@ -92,86 +104,35 @@ const UserReport = () => {
                          {/* box1 */}
                          <div className="userReport-reportSection">
                             <h3 className="userReport-reportSectionName">Submitted at </h3>
-                            <span>March 3, 2023 05:00 PM</span>
+                            <span>{formatDate(report.createdAt)}</span>
                         </div>
                         {/* box2 */}
                         <div className="userReport-reportSection">
                             <h3 className="userReport-reportSectionName">Incident Date</h3>
-                            <span>March 3, 2023 05:00 PM</span>
+                            <span>{formatDate(report.incidentDate)}</span>
                         </div>
                     </div>
                 </div>
 
                 <div className="userReport-reportDescription">
-                {/* {
-                    (() => {
-                        const sanitizedContent = DOMPurify.sanitize(report.content);
-                        return <p>{sanitizedContent}</p>;
-                    })()
-                } */}
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut justo gravida, facilisis nisl quis, luctus sem. Duis nec accumsan velit, gravida lobortis arcu. Suspendisse vel nibh pretium nunc iaculis tempus. Etiam egestas tempor diam, aliquet sodales turpis placerat vel. Vivamus scelerisque commodo scelerisque. Sed velit tortor, tempus id quam faucibus, pellentesque ornare est. Nulla ultrices pretium magna sit amet fringilla. Integer ante orci, vehicula non semper et, pulvinar eget elit. Sed cursus mattis mi.
-                        Phasellus auctor nisi maximus, hendrerit nulla id, congue lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi felis felis, volutpat eu risus quis, facilisis congue metus. Maecenas at mauris mauris. In mattis tempus commodo. Curabitur dui lacus, laoreet id felis vitae, lobortis pellentesque mauris. Mauris purus neque, dapibus at vehicula faucibus, maximus at tellus. In vehicula tortor at diam maximus, at lobortis tellus interdum. Duis hendrerit lorem non felis faucibus dignissim. Donec eleifend feugiat convallis.
-                    </p>
+                        {report.content}
                 </div>
 
                 <div className="userReport-reportAttachment">
                     <h3 className="userReport-reportSectionName">Attachment</h3>
                     <ul className="userReport-reportFileLists">
-                    {/* {report.files.map((file, index) => (
-                        <li key={index} className="userReport-flex items-center mb-2">
-                        {getIconForFileType(file.filename)}
-                        <a
-                            href={`http://localhost:5002/files/${file.filename}`}
-                            className="userReport-text-blue-500 hover:underline"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {file.filename}
-                        </a>
-                        </li>
-                    ))} */}
-                        <li  className="userReport-reportFileList">
-                            {/* {getIconForFileType(file.filename)} */}
-                            <img src={JpegIcon} alt="JPEG/PNG Icon" className="userReport-extensionIcon" />
-                            <a
-                                // href={`http://localhost:5002/files/${file.filename}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                
-                                {/* {file.filename} */}
-                                <p>testFile.jpeg</p> 
-                            </a>
-                        </li>
-
-                        <li  className="userReport-reportFileList">
-                            {/* {getIconForFileType(file.filename)} */}
-                            <img src={JpegIcon} alt="JPEG/PNG Icon" className="userReport-extensionIcon" />
-                            <a
-                                // href={`http://localhost:5002/files/${file.filename}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                
-                                {/* {file.filename} */}
-                                <p>testFile.jpeg</p> 
-                            </a>
-                        </li>
-
-                        <li  className="userReport-reportFileList">
-                            {/* {getIconForFileType(file.filename)} */}
-                            <img src={JpegIcon} alt="JPEG/PNG Icon" className="userReport-extensionIcon" />
-                            <a
-                                // href={`http://localhost:5002/files/${file.filename}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                
-                                {/* {file.filename} */}
-                                <p>testFile.jpeg</p> 
-                            </a>
-                        </li>
+                      {report.files.map((file, index) => (
+                          <li key={index} className="userReport-reportFileList">
+                              <img src={JpegIcon} alt="JPEG/PNG Icon" className="userReport-extensionIcon" />
+                              <a
+                                  href={`https://speaktruth.herokuapp.com/${file.data}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                              >
+                                  <p>{file.filename}</p> 
+                              </a>
+                          </li>
+                      ))}
                     </ul>
                 </div>
             </div>
@@ -183,7 +144,7 @@ const UserReport = () => {
                 </div>
 
                 <div className="userReport-reportChat">
-                    <Chat />
+                {/* <Chat reportKey={reportKey} userRole={userRole} /> */}
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 // Import components
 import TopHeader from "../../components/topHeader/TopHeader";
@@ -119,6 +120,7 @@ const ReportForm = () => {
       // console.log("Uploading files...");
       
       const uploadResponse = await axiosInstanceWithUploads.post("/upload", uploadFormData);
+      // const uploadResponse = await axios.post("http://localhost:5002/api/upload", uploadFormData);
      
       // console.log("Upload response data:", uploadResponse.data);
       // console.log("Upload response:", uploadResponse);

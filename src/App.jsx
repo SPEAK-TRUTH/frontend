@@ -42,7 +42,7 @@ function App() {
 
         {/* repoter */}
         <Route path="/reportForm" element={<ReportForm />} />
-        <Route path="/userReport" element={<UserReport />} />
+        <Route path="/userReport/:reportKey" element={<UserReport />} />
         <Route path="/confirmation" element={<Confirmation />} />
         <Route path="/privacy" element={<Privacy />} />
 
