@@ -125,7 +125,7 @@ const UserReport = () => {
                           <li key={index} className="userReport-reportFileList">
                               <img src={JpegIcon} alt="JPEG/PNG Icon" className="userReport-extensionIcon" />
                               <a
-                                  href={`https://speaktruth-backend.herokuapp.com/api/${file.data}`}
+                                  href={`https://speaktruth-backend.herokuapp.com/${file.data}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                               >
