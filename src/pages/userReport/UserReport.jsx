@@ -125,7 +125,7 @@ const UserReport = () => {
                           <li key={index} className="userReport-reportFileList">
                               <img src={JpegIcon} alt="JPEG/PNG Icon" className="userReport-extensionIcon" />
                               <a
-                                  href={`https://speaktruth.herokuapp.com/${file.data}`}
+                                  href={`https://speaktruth-backend.herokuapp.com/api/${file.data}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                               >
@@ -133,6 +133,13 @@ const UserReport = () => {
                               </a>
                           </li>
                       ))}
+                        {/* {report.files.map((file, index) => (
+                          <li key={index} className="userReport-reportFileList">
+                              <img src={JpegIcon} alt="JPEG/PNG Icon" className="userReport-extensionIcon" />
+                              <img src={`https://speaktruth-backend.herokuapp.com/api/${file.data}`} alt="img" className="singlePostImg" />
+                          </li>
+                          
+                      ))} */}
                     </ul>
                 </div>
             </div>
