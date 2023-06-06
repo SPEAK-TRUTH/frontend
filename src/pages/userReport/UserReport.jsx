@@ -133,13 +133,6 @@ const UserReport = () => {
                               </a>
                           </li>
                       ))}
-                        {/* {report.files.map((file, index) => (
-                          <li key={index} className="userReport-reportFileList">
-                              <img src={JpegIcon} alt="JPEG/PNG Icon" className="userReport-extensionIcon" />
-                              <img src={`https://speaktruth-backend.herokuapp.com/api/${file.data}`} alt="img" className="singlePostImg" />
-                          </li>
-                          
-                      ))} */}
                     </ul>
                 </div>
             </div>
@@ -151,7 +144,7 @@ const UserReport = () => {
                 </div>
 
                 <div className="userReport-reportChat">
-                {/* <Chat reportKey={reportKey} userRole={userRole} /> */}
+                <Chat reportKey={reportKey} userRole={userRole} />
                 </div>
             </div>
         </div>
